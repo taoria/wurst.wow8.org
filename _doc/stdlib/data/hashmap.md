@@ -1,21 +1,20 @@
 ---
-title: Generic Hash Map
+title: 通用哈希映射
 sections:
-- Intro
-- Basic Usage
-- Other Examples
-- Iterable Map
+- 简介
+- 基本用法
+- 其他示例
+- 可迭代映射
 ---
 
-### Intro
+### 简介
 
-A hash table, also known as hash map is a data structure that can map keys to values. It should be used instead of the `hashtable` type if you don't require two keys.
-Unlike the Jass `hashtable` which exposes a wide amount of functions to load, save and remove values,
-the `class HashMap<K, V>` is generic with `K` being the type of the key and `V` being the type of the value you want to save.
+哈希表，也称为哈希映射，是一种可以将键映射到值的数据结构。如果您不需要两个键，则应使用它来代替 `hashtable` 类型。
+与 Jass 的 `hashtable` 暴露大量函数来加载、保存和移除值不同，`class HashMap<K, V>` 是通用的，其中 `K` 是键的类型，`V` 是您想要保存的值的类型。
 
-### Basic Usage
+### 基本用法
 
-Due to its generic nature, the calls on the hashmap will be the same regardless of the types used.
+由于其通用性，无论使用何种类型，对哈希映射的调用都是相同的。
 
 ```wurst
 class A
@@ -26,21 +25,21 @@ class B
 	let map = new HashMap<A, B>
 	let a = new A()
 	let b = new B()
-	// Add a value for the key. Existing values will be overriden
+	// 为键添加一个值。现有值将被覆盖
 	map.put(a, b)
-	// Check if the map contains a value associated with the key
+	// 检查映射是否包含与键关联的值
 	map.has(a).assertTrue()
-	// Get a value
+	// 获取一个值
 	let a2 = map.get(a)
-	// Remove the entry
+	// 移除条目
 	map.remove(a)
 	map.has(a).assertFalse()
 ```
 
-### Other Examples
+### 其他示例
 
-Using the `TypeCasting` package, which is imported by default, we can also use jass types for K and V.
-For example attaching classes to units by using `unit` as key type and your class as value type.
+使用默认导入的 `TypeCasting` 包，我们也可以将 Jass 类型用作 K 和 V。
+例如，通过使用 `unit` 作为键类型，您的类作为值类型，将类附加到单位上。
 
 ```wurst
 class SomeDataClass
@@ -48,11 +47,11 @@ class SomeDataClass
 let dataMap = new HashMap<unit, SomeDataClass>
 ```
 
-### Iterable Map
+### 可迭代映射
 
-Since a normal `HashMap` does not know it's entries, you cannot iterate over them.
-For this case there is `IterableMap` which extends `HashMap` and combines it with a `HashList` storing the keys.
-Via those keys you can then access your values.
+由于普通的 `HashMap` 不知道其条目，因此您无法遍历它们。
+对于这种情况，有 `IterableMap`，它扩展了 `HashMap` 并将其与一个存储键的 `HashList` 结合起来。
+通过这些键，您就可以访问您的值。
 
 ```wurst
 let iterMap = new IterableMap<int, int>

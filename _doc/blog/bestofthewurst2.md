@@ -1,7 +1,7 @@
 ---
-title: Best of the Wurst 2 - December Update
+title: Wurst 精选 2 - 12 月更新
 layout: post
-excerpt: Our first timely blog post for the holidays.
+excerpt: 我们为假期准备的第一篇及时博客文章。
 icon:
   type: fa
   name: fa-snowflake-o
@@ -11,51 +11,55 @@ date: 2017-12-03
 banner: /assets/images/blog/bestof2/bestOfTheWurst2Banner.jpg
 ---
 ------
-![https://wurstlang.org](/assets/images/blog/bestof2/bestOfTheWurst2Banner.jpg){: .img-responsive}
 
-This is the second issue in a regular series of news posts about wurst and the wurstscript community. Unlike [the previous issue](https://wurstlang.org/blog/thissummerinwurst.html), this one is short, and focused on this month's progress. We intend to use this format for all future posts.
+![https://wurstlang.org](/assets/images/blog/bestof2/bestOfTheWurst2Banner.jpg)
+{: .img-responsive}
 
-__What is wurst?__ Wurstscript is a programming language that compiles to JASS (the language used for scripting warcraft 3 custom games), and is developed alongside a suite of tools, which provide a coherent and modern modding development experience. It can even work alongside maps written in vJass. Wurstscript is designed to make hard problems easier and more elegant, and easy problems dead simple.
+这是关于 Wurst 和 WurstScript 社区的常规新闻系列文章的第二期。与[上一期](https://wurstlang.org/blog/thissummerinwurst.html)不同，本期内容简短，重点关注本月的进展。我们打算在未来的所有文章中都采用这种格式。
 
-The theme of this issue is __"wurstscript in practice"__, where we want to show how regular ordinary maps use wurstscript, instead of focusing on higher level language features.
+__什么是 Wurst？__ WurstScript 是一种可编译为 JASS（用于编写《魔兽争霸 3》自定义游戏脚本的语言）的编程语言，它与一套工具一同开发，提供了一致且现代的模组开发体验。它甚至可以与用 vJass 编写的地图协同工作。WurstScript 的设计旨在让难题变得更简单、更优雅，让简单问题变得极其简单。
 
-
-# Toolchain updates
-
-* The [setup tool](https://wurstlang.org/start.html) has been moved to a separate repository. It now checks for new versions of itself as well as silently checking for compiler and project dependency updates. To get these __critical__ new features, please do update your tool by downloading at the link above.
-* [Unit Tests](https://wurstlang.org/manual.html#automated-unit-tests) now have map-wide read access to compiletime resources. This allows the author to unit-test some behaviors that were previously not possible.
-* Added "hashtable mocks" for string data operations, which allows them to work at compiletime and in unit tests.
-* Bug fixes:
-    - Fixed some edge cases where vscode autocomplete would misbehave.
-    - Fixed a bug which caused the `buildmap` command to emit an invalid mapfile in certain cases.
-    - Changing between files in vscode no longer causes an invalid buffer ("ambigious reference error").
-    - Standard library fixes, and new features.
-    - Fixed some rare cases of ascii-int parsing problems, which improves JASS compliance.
-
-Special thanks to @DD_LegionTN and @HappyTauren for their testing and contribution efforts.
+本期的主题是__“实践中的 WurstScript”__，我们希望展示普通地图如何使用 WurstScript，而不是专注于更高级的语言特性。
 
 
-# Hiveworkshop integration
+# 工具链更新
 
-This month a number of us have been thinking about, and acting on, ways of improving unification between wurst's development and hive workshop.
+* [安装工具](https://wurstlang.org/start.html)已移至一个独立的仓库。它现在会检查自身的新版本，并静默检查编译器和项目依赖的更新。要获得这些__关键__新功能，请通过上面的链接下载更新您的工具。
+* [单元测试](https://wurstlang.org/manual.html#automated-unit-tests)现在拥有对编译时资源的地图范围读取权限。这使得作者可以对一些以前无法进行单元测试的行为进行测试。
+* 为字符串数据操作添加了“哈希表模拟”，使其可以在编译时和单元测试中工作。
+* 错误修复：
+    - 修复了 vscode 自动补全在某些边缘情况下行为异常的问题。
+    - 修复了一个导致 `buildmap` 命令在某些情况下生成无效地图文件的错误。
+    - 在 vscode 中切换文件不再导致无效缓冲区（“ambigious reference error”）。
+    - 标准库修复和新功能。
+    - 修复了一些罕见的 ascii-int 解析问题，提高了 JASS 的兼容性。
 
-One achievement on this front is the addition of the Wurst tag, now enabled for all code-related submissions. This includes:
+特别感谢 @DD_LegionTN 和 @HappyTauren 的测试和贡献。
 
-* Spell submissions.
-* Triggers & Scripts posts.
-* JASS (code) submissions.
 
-![](/assets/images/blog/bestof2/hiveTag.jpg){: .img-responsive}
+# Hiveworkshop 集成
 
-We were also excited to see [multiple](https://www.hiveworkshop.com/threads/snippet-initpackage.300738/) [submissions](https://www.hiveworkshop.com/threads/quest.300223/) before this was even announced!
+本月，我们中的一些人一直在思考并采取行动，以改善 Wurst 开发与 Hive Workshop 之间的统一性。
 
-You should expect further wurst-related activity in the near future as a number of community members are getting involved.
+这方面的一项成就是增加了 Wurst 标签，现在所有与代码相关的提交都已启用该标签。这包括：
 
-We're excited to see what you've done that might be fun or interesting but doesn't quite fit in the standard library - and even moreso interested to see what kind of magic you can work up in spell submissions. For code review feedback always feel free to tag @Frotty or @Cokemonkey11 .
+* 技能提交。
+* 触发器与脚本帖子。
+* JASS（代码）提交。
+
+
+![](/assets/images/blog/bestof2/hiveTag.jpg)
+{: .img-responsive}
+
+我们也很高兴地看到，在这一消息公布之前，就已经有了[多个](https://www.hiveworkshop.com/threads/snippet-initpackage.300738/)[提交](https://www.hiveworkshop.com/threads/quest.300223/)！
+
+随着越来越多的社区成员参与进来，您可以期待在不久的将来看到更多与 Wurst 相关的活动。
+
+我们很期待看到您创作的那些有趣但不太适合标准库的作品——更期待看到您在技能提交中能创造出什么样的魔法。如需代码审查反馈，请随时标记 @Frotty 或 @Cokemonkey11。
 
 ---
 
-As requested by our readers, we're going to include a code snippet example in our posts from now on. In line with this month's theme, here's a practical and simple example that shows how wurst can make an easy problem trivial:
+应读者要求，我们从现在开始将在文章中包含代码片段示例。为了契合本月的主题，这里有一个实用而简单的例子，展示了 Wurst 如何将一个简单的问题变得微不足道：
 
 ```wurst
 package SimpleSpell
@@ -95,7 +99,7 @@ init
 	registerSpellEffectEvent(ID_BLINK, function onEffect)
 ```
 
-Then when the wurst compiler is run, the above emits nicely readable Jass (see below). This is just one example of wurst providing zero-cost abstraction, since the inliner would ultimately inline e.g. getSpellTargetPos into 2 local definitions - a topic we will discuss more in future posts.
+然后，当运行 Wurst 编译器时，上述代码会生成可读性很好的 Jass（见下文）。这只是 Wurst 提供零成本抽象的一个例子，因为内联器最终会将例如 getSpellTargetPos 内联为 2 个局部定义——我们将在未来的文章中更多地讨论这个话题。
 
 ```wurst
 function getSpellTargetPos takes nothing returns real
@@ -121,6 +125,6 @@ function onEffect takes nothing returns nothing
 endfunction
 ```
 
-Next month we'll return to a more hardcore example, demonstrating `@compiletime function`s + expressions, and their uses.
+下个月，我们将回归一个更硬核的例子，演示 `@compiletime function`s + 表达式及其用途。
 
-We look forward to your comments! As usual, we chat all things wurst at the [#inwc.de-maps](https://kiwiirc.com/client/irc.quakenet.org/#inwc.de-maps) IRC channel.
+我们期待您的评论！像往常一样，我们在 [#inwc.de-maps](https://kiwiirc.com/client/irc.quakenet.org/#inwc.de-maps) IRC 频道讨论所有与 Wurst 相关的事情。

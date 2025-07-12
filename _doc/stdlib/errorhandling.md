@@ -1,5 +1,5 @@
 ---
-title: Error Handling
+title: 错误处理
 layout: stdlibdoc
 color: blue
 date: 2019-03-25
@@ -7,4 +7,4 @@ sections:
   - /stdlib/_wurst/errorhandling
 ---
 
-**[SOURCE ON GITHUB](https://github.com/wurstscript/WurstStdlib2/blob/master/wurst/_wurst/ErrorHandling.wurst)**
+**[GITHUB 上的源代码](https://github.com/wurstscript/WurstStdlib2/blob/master/wurst/_wurst/ErrorHandling.wurst)**

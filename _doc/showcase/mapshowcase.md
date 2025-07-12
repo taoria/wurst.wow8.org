@@ -1,5 +1,5 @@
 ---
-title: Maps
+title: 地图
 ---
 
 <!-- Start Row -->
@@ -8,18 +8,20 @@ title: Maps
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/fdefpreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/forest-defense-0-18w.300554/)
+[
+![截图](/assets/images/showcase/fdefpreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/forest-defense-0-18w.300554/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Forest Defense
+#### 森林防御
 
 {: .card-text}
-A fast paced mix of coop TD and Survival. Players build walls and towers to defend the middle against creeps.
+一款快节奏的合作塔防和生存混合游戏。玩家建造墙壁和塔楼，以保卫中心区域免受小兵的攻击。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/forest-defense-0-18w.300554/) [_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://github.com/Frotty/ForestDef)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/forest-defense-0-18w.300554/) [_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://github.com/Frotty/ForestDef)
 
 </div>
 
@@ -28,7 +30,9 @@ A fast paced mix of coop TD and Survival. Players build walls and towers to defe
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/microtdpreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/microrunnertd-1-0-2.286363/#resource-67601)
+[
+![截图](/assets/images/showcase/microtdpreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/microrunnertd-1-0-2.286363/#resource-67601)
 
 <div class="card-block" markdown="1">
 
@@ -37,9 +41,9 @@ A fast paced mix of coop TD and Survival. Players build walls and towers to defe
 #### Microrunner TD
 
 {: .card-text}
-A TD where players controls a fragile runner which must evade enemy creeps while guiding them to their towers.
+一款塔防游戏，玩家控制一个脆弱的跑者，必须躲避敌方小兵，同时引导他们走向自己的塔楼。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/microrunnertd-1-0-2.286363/#resource-67601) [_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://bitbucket.org/Cokemonkey11/microrunnertd/src)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/microrunnertd-1-0-2.286363/#resource-67601) [_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://bitbucket.org/Cokemonkey11/microrunnertd/src)
 
 </div>
 
@@ -55,18 +59,20 @@ A TD where players controls a fragile runner which must evade enemy creeps while
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/ebrpreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/escape-builder-r-0-90s.184964/)
+[
+![截图](/assets/images/showcase/ebrpreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/escape-builder-r-0-90s.184964/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Escape Builder Reloaded
+#### 逃脱建造者：重制版
 
 {: .card-text}
-Allows players to build and escape mazes created ingame. Basically an ingame editor for escape-style maps.
+允许玩家在游戏内建造并逃脱迷宫。基本上是一个用于制作逃脱类地图的游戏内编辑器。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/escape-builder-r-0-90s.184964/) [_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://github.com/Frotty/EBR)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/escape-builder-r-0-90s.184964/) [_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://github.com/Frotty/EBR)
 
 </div>
 
@@ -77,18 +83,20 @@ Allows players to build and escape mazes created ingame. Basically an ingame edi
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/ittpreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/island-troll-tribes-v2-99f.297609/)
+[
+![截图](/assets/images/showcase/ittpreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/island-troll-tribes-v2-99f.297609/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Island Troll Tribes
+#### 巨魔与精灵
 
 {: .card-text}
-Combines survival and PvP melee combat in a fight to the death for domination of the islands.
+结合了生存和 PvP 近战格斗，为争夺岛屿的统治权而进行殊死搏斗。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/island-troll-tribes-v2-99f.297609/) [_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://github.com/island-troll-tribes/island-troll-tribes)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/island-troll-tribes-v2-99f.297609/) [_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://github.com/island-troll-tribes/island-troll-tribes)
 
 </div>
 
@@ -103,18 +111,20 @@ Combines survival and PvP melee combat in a fight to the death for domination of
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/goldrushPreview.jpg){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/gold-rush-v1-1.269852/)
+[
+![截图](/assets/images/showcase/goldrushPreview.jpg)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/gold-rush-v1-1.269852/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Gold Rush
+#### 淘金热
 
 {: .card-text}
-A tag-style FFA map where players switch between hunter and hunted. Each player must collect 400 gold to win.
+一款标签式的 FFA 地图，玩家在猎人与猎物之间切换身份。每位玩家必须收集 400 金币才能获胜。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/gold-rush-v1-1.269852/) [_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://github.com/HannesHaglund/Gold-Rush)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/gold-rush-v1-1.269852/) [_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://github.com/HannesHaglund/Gold-Rush)
 
 </div>
 
@@ -125,18 +135,20 @@ A tag-style FFA map where players switch between hunter and hunted. Each player 
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/gorgepreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/battle-planes-0-14-5.292325/)
+[
+![截图](/assets/images/showcase/gorgepreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/battle-planes-0-14-5.292325/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Battle Planes
+#### 战斗机甲
 
 {: .card-text}
-Battleships-style aos that focuses on simplicity. Uses automatically firing weapons and interesting systems.
+一款注重简洁性的战舰风格 AOS 地图。使用自动开火的武器和有趣的系统。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/battle-planes-0-14-5.292325/) [_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://bitbucket.org/Cokemonkey11/the-gorge/src)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/battle-planes-0-14-5.292325/) [_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://bitbucket.org/Cokemonkey11/the-gorge/src)
 
 </div>
 
@@ -153,18 +165,20 @@ Battleships-style aos that focuses on simplicity. Uses automatically firing weap
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/draftpreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/warcraft-3-ability-draft.291422/)
+[
+![截图](/assets/images/showcase/draftpreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/warcraft-3-ability-draft.291422/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Wc3 Ability Draft
+#### 魔兽3技能征召
 
 {: .card-text}
-Brings the immensely popular gamemmode from Dota 2 to Warcraft 3 melee maps.
+将 Dota 2 中广受欢迎的游戏模式带到了魔兽争霸 3 的对战地图中。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/warcraft-3-ability-draft.291422/)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/warcraft-3-ability-draft.291422/)
 
 </div>
 
@@ -176,18 +190,20 @@ Brings the immensely popular gamemmode from Dota 2 to Warcraft 3 melee maps.
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/snowballpreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/snowball-fight-1-33g.311681/)
+[
+![截图](/assets/images/showcase/snowballpreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/snowball-fight-1-33g.311681/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Snowball Fight
+#### 雪球大战
 
 {: .card-text}
-A charmful skirmish between two teams in a snowy landscape.
+在雪景中，两支队伍之间展开一场充满魅力的混战。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/snowball-fight-1-33g.311681/) [_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://github.com/Frotty/Snowball-Fight)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/snowball-fight-1-33g.311681/) [_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://github.com/Frotty/Snowball-Fight)
 
 </div>
 
@@ -204,16 +220,18 @@ A charmful skirmish between two teams in a snowy landscape.
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/ltwevopreview.jpg){: .img-responsive .center-block}](https://www.epicwar.com/maps/291953/)
+[
+![截图](/assets/images/showcase/ltwevopreview.jpg)
+{: .img-responsive .center-block}](https://www.epicwar.com/maps/291953/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Line Tower Wars Evolution
+#### 线性塔防进化版
 
 {: .card-text}
-Build a maze of towers to protect your lives from invading creeps. Send creeps to steal lives from your oppoents.
+建造迷宫般的塔楼，保护你的生命免受入侵小兵的伤害。派遣小兵去窃取对手的生命。
 
 [_&nbsp;_{: .fa .fa-external-link-square} Epicwar](https://www.epicwar.com/maps/291953/)
 
@@ -227,18 +245,20 @@ Build a maze of towers to protect your lives from invading creeps. Send creeps t
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/etcpreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/escape-the-crab-0-23a.316415/)
+[
+![截图](/assets/images/showcase/etcpreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/escape-the-crab-0-23a.316415/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Escape the Crab
+#### 逃离巨蟹
 
 {: .card-text}
-Based in ancient japan, you and your pals try to escape from a Giant Enemy Crab. Remember to attack its weak point for massive damage.
+背景设定在古代日本，你和你的伙伴们试图从一只巨大的敌方螃蟹手中逃脱。记住攻击它的弱点以造成巨大伤害。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/escape-the-crab-0-23a.316415/) [_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://github.com/Frotty/EscapeTheCrab)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/escape-the-crab-0-23a.316415/) [_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://github.com/Frotty/EscapeTheCrab)
 
 </div>
 
@@ -255,7 +275,9 @@ Based in ancient japan, you and your pals try to escape from a Giant Enemy Crab.
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/gargonachpreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/gargonach-0-1-0.216521/)
+[
+![截图](/assets/images/showcase/gargonachpreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/gargonach-0-1-0.216521/)
 
 <div class="card-block" markdown="1">
 
@@ -264,10 +286,10 @@ Based in ancient japan, you and your pals try to escape from a Giant Enemy Crab.
 #### Gargonach
 
 {: .card-text}
-This map is inspired from a boss in the original Half- Life story called "Gonarch".
+这张地图的灵感来源于《半条命》原作故事中一个名为“Gonarch”的 Boss。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/gargonach-0-1-0.216521/)
-[_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://bitbucket.org/Cokemonkey11/gargonach/)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/gargonach-0-1-0.216521/)
+[_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://bitbucket.org/Cokemonkey11/gargonach/)
 
 </div>
 
@@ -279,18 +301,20 @@ This map is inspired from a boss in the original Half- Life story called "Gonarc
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/hunterpreview.png){: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/hunters-hall-1-6-0.164630/)
+[
+![截图](/assets/images/showcase/hunterpreview.png)
+{: .img-responsive .center-block}](https://www.hiveworkshop.com/threads/hunters-hall-1-6-0.164630/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Hunter's hall
+#### 猎手大厅
 
 {: .card-text}
-Hunter's Hall is a team-oriented PvP game which consists of short, objective-based rounds.
+猎手大厅是一款以团队为导向的 PvP 游戏，由多个基于目标的短回合组成。
 
-[_&nbsp;_{: .fa .fa-external-link-square} Hive Thread](https://www.hiveworkshop.com/threads/hunters-hall-1-6-0.164630/) [_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://bitbucket.org/Cokemonkey11/hunters-hall/)
+[_&nbsp;_{: .fa .fa-external-link-square} Hive 帖子](https://www.hiveworkshop.com/threads/hunters-hall-1-6-0.164630/) [_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://bitbucket.org/Cokemonkey11/hunters-hall/)
 
 </div>
 
@@ -307,19 +331,21 @@ Hunter's Hall is a team-oriented PvP game which consists of short, objective-bas
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/sheeppreview.jpg){: .img-responsive .center-block}](https://www.epicwar.com/maps/287076/)
+[
+![截图](/assets/images/showcase/sheeppreview.jpg)
+{: .img-responsive .center-block}](https://www.epicwar.com/maps/287076/)
 
 <div class="card-block" markdown="1">
 
 {: .card-title}
 
-#### Sheep Tag Relapse
+#### 绵羊捉迷藏：回归
 
 {: .card-text}
-A new direction for Sheep Tag Revolution powered by Wurst.
+由 Wurst 驱动的《绵羊捉迷藏：革命》的新方向。
 
 [_&nbsp;_{: .fa .fa-external-link-square} Epicwar](https://www.epicwar.com/maps/287076/)
-[_&nbsp;_{: .fa .fa-external-link-square} Git Repo](https://github.com/W3Madhatters/Sheep-Tag-Relapse)
+[_&nbsp;_{: .fa .fa-external-link-square} Git 仓库](https://github.com/W3Madhatters/Sheep-Tag-Relapse)
 
 </div>
 

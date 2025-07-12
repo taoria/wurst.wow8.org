@@ -138,7 +138,7 @@ class UnitWrapper
 
 ## 静态元素
 
-通过在声明前面写入关键字“static”，可以将变量和函数声明为“u static”。
+通过在声明前面写入关键字“static”，可以将变量和函数声明为“static”。
 静态变量和方法/函数属于类，而其他元素属于类的实例。
 因此，您可以调用静态方法，而无需类的实例。
 
@@ -153,7 +153,7 @@ class Terrain
 
 function foo()
     let z = Terrain.getZ( 0, 0 ) // 使用 $类名$.$静态方法名字$()来访问静态方法
-    let r = Terrain.someVal // 静态变量也是一样的 
+    let r = Terrain.someVal // 静态变量也是一样的
     let s = Terrain.someArr[0]
 ```
 
@@ -161,7 +161,7 @@ function foo()
 
 ## 数组成员
 
-香肠通过将大小数组转换为大小乘以数组，然后通过二叉树搜索在get/set函数中解析数组，从而支持将大小数组作为类成员。
+Wurst通过将定长数组成员转换为多个独立变量，并通过二叉树搜索在get/set函数中解析数组索引，从而支持定长数组成员。
 
 `译注:这一点不用太在意,只需要知道成员数组变量需要标明数组大小即可(数组的大小不应过大)`
 
@@ -206,7 +206,7 @@ class Rectangle
 
 ```wurst
 //弹幕
-class Missile 
+class Missile
     construct(string fx, real x, real y)
         // ...
     //碰撞
@@ -215,7 +215,7 @@ class Missile
 
 // 定义一种特殊的弹幕 火球弹幕 它继承于弹幕
 class FireballMissile extends Missile
-    // we construct it using a fireball fx
+    // 我们用火球特效来构造它
     construct(real x, real y)
         //译注:调用父类的构造函数
         super("Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl", x, y)
@@ -489,7 +489,7 @@ class ExampleClass implements Interface1, Interface2, ...
 有了接口（如果是隐式的，还有模块），现在可以上下转换任何实现它的类。
 这对于保存来自仅在1个集合列表或者数组中继承1个接口的类的所有实例特别有用
 
-### Defender methods
+### 防御者方法
 
 接口可以具有带有实现的函数。当实现接口的类不提供方法本身的实现。
 通常这是不需要的，但在某些情况下可能为了在不破坏接口实现类的情况下实现接口，必须这样做。
@@ -504,51 +504,44 @@ be necessary in order to evolve an interface without breaking its implementing c
 
 ## 泛型
 
-Generics make it possible to abstract from specific types and only program with placeholders
-for types. This is especially useful for container types (e.g. Lists) where we do not want to code a
-ListOfA, ListOfB, ListOfC for every class A, B, C which we need a list for.
-Think of it as creating a general List with all it's functionality, but for an
-unknown type, that gets defined when creating the instance.
+泛型使得从特定类型中抽象出来，只用类型的占位符进行编程成为可能。这对于容器类型（例如列表）尤其有用，因为我们不想为每个需要列表的类 A、B、C 都编写一个 ListOfA、ListOfB、ListOfC。可以把它想象成创建一个通用的列表，它拥有所有功能，但是针对一个未知的类型，这个类型在创建实例时才被定义。
 
-With generics we can instead write only one implementation for lists and use it with all types.
-Generic type parameter and arguments are
-written in angled  bracket s  (<  an d >) after the identifier.
+有了泛型，我们就可以只为列表编写一个实现，并将其用于所有类型。泛型类型参数和实参写在标识符后面的尖括号（< 和 >）中。
 
 
 ```wurst
-// a generic interface for Sets with type parameter T
+// 一个带有类型参数 T 的泛型 Set 接口
 interface Set<T>
-    // adds an element to the set
+    // 向集合中添加一个元素
     function add(T t)
 
-    // removes an element from the set
+    // 从集合中移除一个元素
     function remove(T t)
 
-    // returns the number of elements in the set
+    // 返回集合中元素的数量
     function size() returns int
 
-    // checks whether a certain element is in the set
+    // 检查某个元素是否在集合中
     function contains(T t) returns boolean
 
 class SetImpl<T> implements Set<T>
-    // [...] implementation of the interface
+    // [...] 接口的实现
 ```
-If we have a class defined like this, we can then use it with a concrete type (e.g. Missile):
+如果我们这样定义了一个类，我们就可以将它与一个具体的类型（例如 Missile）一起使用：
 ```wurst
-// create a set of missiles
+// 创建一个导弹集合
 Set<Missile> missiles = new SetImpl<Missile>();
-// add a missile m
+// 添加一个导弹 m
 missiles.add(m);
 ```
-Generic parameters in Wurst can be bound to integers, class types and interface types directly.
-In order to bind generic parameters to primitive-, handle- and tuple types you have to provide the functions
+Wurst 中的泛型参数可以直接绑定到整数、类类型和接口类型。为了将泛型参数绑定到原始类型、句柄类型和元组类型，您必须提供以下函数
 ```wurst
 function [TYPE]ToIndex([TYPE] t) returns int
 
 function [TYPE]FromIndex(int index) returns [TYPE]
     return ...
 ```
-The typecasting functions for primitive- and handle types are provided in _Typecasting.wurst_ using the fogstate bug.
+原始类型和句柄类型的类型转换函数在 _Typecasting.wurst_ 中使用 fogstate bug 提供。
 ```wurst
 function unitToIndex(unit u) returns int
     return u.getHandleId()
@@ -557,11 +550,9 @@ function unitFromIndex(int index) returns unit
     data.saveFogState(0,ConvertFogState(index))
     return data.loadUnit(0)
 ```
-### Generic Functions
+### 泛型函数
 
-Functions can use generic types. The type parameter is written after the name of the function.
-In the following example the function *forall* tests if a predicate is true for all elements in a list.
-The function has to be generic, because it has to work on all kinds of lists.
+函数可以使用泛型类型。类型参数写在函数名之后。在下面的例子中，函数 *forall* 测试一个断言是否对列表中的所有元素都为真。该函数必须是泛型的，因为它必须适用于所有类型的列表。
 ```wurst
 function forall<T>(LinkedList<T> l, LinkedListPredicate<T> pred) returns boolean
     for x in l
@@ -569,20 +560,19 @@ function forall<T>(LinkedList<T> l, LinkedListPredicate<T> pred) returns boolean
             return false
     return true
 
-// usage:
+// 用法：
     LinkedList<int> l = ...
-    // check if all elements in the list are even
+    // 检查列表中的所有元素是否都是偶数
     if forall<int>(l, (int x) -> x mod 2 == 0)
         print("true")
 ```
-When calling a generic function, the type arguments can be omitted if they can be inferred
-from the arguments to the function:
+调用泛型函数时，如果类型实参可以从函数的实参中推断出来，则可以省略它们：
 ```wurst
 ...
 if forall(l, (int x) -> x mod 2 == 0)
     ...
 ```
-Extension functions can also be generic, as shown by the following example:
+扩展函数也可以是泛型的，如下例所示：
 ```wurst
 function LinkedList<T>.forall<T>(LinkedListPredicate<T> pred) returns boolean
     for x in this
@@ -590,23 +580,23 @@ function LinkedList<T>.forall<T>(LinkedListPredicate<T> pred) returns boolean
             return false
     return true
 
-// usage:
+// 用法：
     ...
     if l.forall((int x) -> x mod 2 == 0)
         ...
 ```
 
-## Modules
+## 模块
 
-A _module_ is a small package which provides some functionality for classes. Classes can _use_ modules to inherit the functionality of the module.
+_模块_是一个为类提供某些功能的小包。类可以_使用_（use）模块来继承模块的功能。
 
-You can use the functions from the used module as if they were declared in the class. You can also _override_ functions defined in a module to adjust its behavior.
+你可以像在类中声明一样使用所用模块中的函数。你也可以_重写_（override）模块中定义的函数来调整其行为。
 
-If you know object oriented languages like Java or C#: Modules are like abstract classes and using a module is like inheriting from an abstract class but *without the sub-typing*. Modules encapsulate behaviour that you might want to add to several classes, without overhead and hierarchical structure. 
+如果你了解像 Java 或 C# 这样的面向对象语言：模块就像抽象类，使用模块就像从抽象类继承，但*没有子类型化*。模块封装了你可能想添加到多个类中的行为，而没有开销和层次结构。
 
-### Example 1
+### 示例 1
 
-In this example we just have a class which uses a module A. The resulting program behaves as if the code from module A would be pasted into Class C.
+在这个例子中，我们只有一个使用模块 A 的类。最终的程序行为就好像模块 A 的代码被粘贴到类 C 中一样。
 
 ```wurst
 module A
@@ -617,12 +607,12 @@ class C
     use A
 ```
 
-### Example 2
+### 示例 2
 
-Modules are more than just a mechanism to copy code. Classes and modules can override functions defined in used modules:
+模块不仅仅是复制粘贴代码的机制。类和模块可以重写在所使用的模块中定义的函数：
 
 ```wurst
-// a module to store an integer variable
+// 一个存储整型变量的模块
 module IntContainer
     int x
 
@@ -632,35 +622,35 @@ module IntContainer
     public function setX(int x)
         this.x = x
 
-// a container which only stores positive ints
+// 一个只存储正整数的容器
 module PositiveIntContainer
     use IntContainer
 
-    // override the setter to only store positive integers
+    // 重写 setter 以只存储正整数
     override function setX(int x)
         if x >= 0
             IntContainer.setX(x)
 ```
 
-### Visibility & Usage Rules
+### 可见性与使用规则
 
- * Variables of modules are always private
- * private functions are only usable from the module itself
- * each function of a module must be declared public or private
- * if a class uses a module it inherits only the public functions of the module
-    * you can use a module with *private* (not implemented yet). This will let you use the functionality of the module without exposing its functions to the outside.
+ * 模块的变量总是私有的
+ * 私有函数只能从模块本身使用
+ * 模块的每个函数都必须声明为 public 或 private
+ * 如果一个类使用一个模块，它只继承该模块的公共函数
+    * 你可以*私下*（private）使用一个模块（尚未实现）。这将让你能够使用模块的功能，而无需将其函数暴露给外部。
 
 
-### Overriding Functions
+### 重写函数
 
- * You can *override* functions which are defined in used modules by writing the override keyword in front of a function.
- * If two modules are used, which have the same function, it *must* be overridden by the underlying class or module in order to avoid ambiguousness (of course this is only possible if the function signatures match. We are thinking about a solution for this)
- * private functions cannot be overridden
+ * 你可以通过在函数前写上 override 关键字来*重写*在所使用的模块中定义的函数。
+ * 如果使用了两个具有相同函数的模块，那么它*必须*被底层的类或模块重写，以避免歧义（当然，这只有在函数签名匹配时才可能。我们正在考虑这个问题的解决方案）
+ * 私有函数不能被重写
 
-### Abstract Functions
+### 抽象函数
 
-Modules can declare abstract functions: Functions without a given implementation. Abstract functions have to be implemented by the underlying classes.
+模块可以声明抽象函数：即没有给定实现的函数。抽象函数必须由底层的类来实现。
 
 ### Thistype
 
-You can use _thistype_ inside a module to refer to the type of the class which uses the module. This can be useful if you need to cast the class to an integer and back.
+你可以在模块内部使用 _thistype_ 来引用使用该模块的类的类型。当需要将类转换为整数再转换回来时，这会很有用。

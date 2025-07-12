@@ -16,7 +16,9 @@ sections:
 
 【中国的网络环境可能导致超时，需要科学上网使用。】
 
-![](/assets/images/setup/WurstSetup.png){: .img-responsive}
+
+![](/assets/images/setup/WurstSetup.png)
+{: .img-responsive}
 
 ### 安装编译器
 
@@ -29,7 +31,9 @@ sections:
 
 当一切完成后，安装程序应该会显示你的安装是最新版的，现在 **Create Project** 按钮可以使用了：
 
-![](/assets/images/setup/WurstInstallDone.png){: .img-responsive}
+
+![](/assets/images/setup/WurstInstallDone.png)
+{: .img-responsive}
 
 ### 创建项目
 
@@ -39,7 +43,9 @@ sections:
 安装程序现在将创建一个Wurst项目结构，并下载必要的依赖项。
 如果一切安装正确，你应该会看到下方的消息：
 
-![](/assets/images/setup/ProjectSetupDone.png){: .img-responsive}
+
+![](/assets/images/setup/ProjectSetupDone.png)
+{: .img-responsive}
 
 安装完成后，你现在可以在VSCode中打开项目的根文件夹。
 打开Hello.wurst文件来激活Wurst插件，代码应该会开始编译，并且完成项目搭建。

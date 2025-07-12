@@ -1,7 +1,7 @@
 ---
-title: About 1.29 Support
+title: 关于1.29支持
 layout: post
-excerpt: Short headsup about 1.29 and Wurst
+excerpt: 关于1.29和Wurst的简短提醒
 icon:
   type: fa
   name: fa-rss
@@ -11,28 +11,28 @@ date: 2018-04-13
 banner: /assets/images/empty.png
 ---
 ------
-## Patch Compatability
+## 补丁兼容性
 
-As of yesterday the 1.29 compatability changes have been merged and are available as update via the setup tool.
-This also contains the new natives and classes with instance limit increased to 32768.
+截至昨天，1.29兼容性更改已合并，并通过设置工具作为更新提供。
+这还包含了新的本地函数和类，实例限制增加到32768。
 
-Community member @crojewsk already created a Pull Request for the standard library containing extension function wrappers for the new natives, which will soon be merged.
+社区成员@crojewsk已经为标准库创建了一个拉取请求，包含新本地函数的扩展函数包装器，该请求很快将被合并。
 
-With everything up to date, runmap should work as expected.
+所有内容更新后，runmap应该能正常工作。
 
-## 24 Players
+## 24名玩家
 
-Our wurst.build integration still doesn't support configuring players, forces and loadingscreen options.
-These features will soon be implemented however, and then provide direct access to all new features from this patch.
+我们的wurst.build集成仍然不支持配置玩家、势力和加载屏幕选项。
+这些功能将很快实现，然后可以直接访问此补丁中的所有新功能。
 
-For more information on the new patch [click here](https://www.hiveworkshop.com/threads/warcraft-iii-patch-1-29.304803/).
+有关新补丁的更多信息，请[点击这里](https://www.hiveworkshop.com/threads/warcraft-iii-patch-1-29.304803/)。
 
-## Troubleshooting
+## 故障排除
 
-> __I get wurst errors when trying to use the new natives!__
+> __当尝试使用新本地函数时，我收到wurst错误！__
 
-- Try deleting `common.j` and `Blizzard.j` files from your `_build` folder. Then use runmap to regenerate them.
+- 尝试删除`_build`文件夹中的`common.j`和`Blizzard.j`文件。然后使用runmap重新生成它们。
 
-> __Runmap starts, but the game window is black with a black error dialog__
+> __Runmap启动，但游戏窗口是黑色且有一个黑色错误对话框__
 
-- This happens when a map with the same name exists in the game's root maps directory and the user-data map directory. Try deleting `/Maps/Test/WurstRunMap.w3x` from your game root directory.
+- 当游戏根目录的地图目录和用户数据地图目录中存在同名地图时，会发生此情况。尝试从游戏根目录删除`/Maps/Test/WurstRunMap.w3x`。

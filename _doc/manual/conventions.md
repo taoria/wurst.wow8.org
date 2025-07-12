@@ -23,7 +23,7 @@ sections:
 #### 源文件名
 
 
-如果一个 `.wurst` 文件只包含一个类或者元组(with potentially closely related declarations), 则该文件应该与该类或元组同名.如果一个文件包含多个类,元组,或者仅仅是一些顶部声明,那么选个能描述这个文件包含什么内容的名字.多个单词用驼峰命名法.(比如 `ClosureEvents.wurst`).
+如果一个 `.wurst` 文件只包含一个类或者元组（可能包含与之紧密相关的声明）, 则该文件应该与该类或元组同名.如果一个文件包含多个类,元组,或者仅仅是一些顶部声明,那么选个能描述这个文件包含什么内容的名字.多个单词用驼峰命名法.(比如 `ClosureEvents.wurst`).
 
 #### 源文件的组织
 我们鼓励把多个声明(类,元组,顶层的函数)放置在同一wurst源文件中的行为,只要这些声明在语义上高度关联.并且文件的长度足够合理(没有超过几百行)
@@ -57,7 +57,7 @@ Wurst和Java的命名规则类似,特别要强调的是:
 
 类名开头大写,并用驼峰命名法
 
-元组名开头小学,并用驼峰命名法
+元组名开头小写,并用驼峰命名法
 
 函数,属性,局部变量开头小写,用驼峰而非下划线
 
@@ -72,17 +72,15 @@ Wurst和Java的命名规则类似,特别要强调的是:
 函数名通常是动词或者动词短语,以解释这些方法的作用: `add`, `castImmediate`.
 该名字应该提示该方法是否修改了对象或返回了一个新对象
 
-名字应该凸显出该实例的目的.所以最好不要用无意义的单词:(Manager, Wrapper etc.) 
+名字应该凸显出该实例的目的.所以最好不要用无意义的单词:(Manager, Wrapper etc.)
 
-在用缩写命名的时候,如果缩写仅为两个字符,两个字符都大写
- (`IOTaskExecutor`); 更长的话则单单大写首字符(`LzwCompressor`, `Wc3String`).
+在用缩写命名的时候,如果缩写仅为两个字符,两个字符都大写 (`IOTaskExecutor`); 更长的话则单单大写首字符(`LzwCompressor`, `Wc3String`).
 
 ### 格式化
 
 通常情况下,Wurst遵循JAVA的代码规范.
-In most cases, Wurst follows the Java coding conventions.
 
-使用4个空格或者tap来做缩进.不要在同一个文件中混用两者
+使用4个空格或者tab来做缩进.不要在同一个文件中混用两者
 
 
 #### 平行的空格
@@ -116,7 +114,7 @@ init
 
 #### Lambda 格式
 
-In lambda expressions, spaces should be used around the `begin` and `end` keywords, as well as around the arrow which separates the parameters from the body. If a call takes a single lambda, it should be passed outside of parentheses whenever possible. Prefer putting lambda parameters as the last argument, so it can be written without `begin` and `end`.
+在 lambda 表达式中，应在 `begin` 和 `end` 关键字周围以及分隔参数和主体的箭头周围使用空格。如果一个调用只接受单个 lambda，应尽可能将其放在括号外传递。倾向于将 lambda 参数作为最后一个参数，这样就可以在不使用 `begin` 和 `end` 的情况下编写。
 
 ```wurst
 list.filter(t -> t > 10)
@@ -125,41 +123,41 @@ execute() ->
 	hash = hash()
 ```
 
-### Documentation comments (hot doc)
+### 文档注释 (hot doc)
 
-For documentation comments, also known as hot doc, that will show up in auto-completion, place the opening `/**` and close them with `*/`. Short comments can be placed on a single line.
+对于将在自动补全中显示的文档注释（也称为 hot doc），请使用 `/**` 开头，并用 `*/` 结尾。简短的注释可以放在单行上。
 
-`/** This is a short documentation comment. */`
+`/** 这是一个简短的文档注释。 */`
 
-Wurst does not provide support @param and @return tags right now. Instead, you should incorporate the description of parameters and return values directly into the documentation comment, and add links to parameters wherever they are mentioned.
+Wurst 目前不支持 @param 和 @return 标签。相反，您应该将参数和返回值的描述直接整合到文档注释中，并在提到参数的地方添加链接。
 
-### Avoiding warnings
+### 避免警告
 
-Address any warnings the compiler shows for your code. If you need to ignore a warning for an intentionally unused variable, prefix it with an underscore `_`.
+处理编译器为您的代码显示的所有警告。如果您需要忽略一个有意未使用的变量的警告，请在其名称前加上下划线 `_`。
 
-### Idiomatic use of language features
+### 通顺地使用语言特性
 
-#### Local variable declaration
+#### 局部变量声明
 
-Prefer declaring locals at the location where they are needed over declaring them all at the top like in Jass. Merge declarations and first assignments if sensible.
+倾向于在需要局部变量的地方声明它们，而不是像在 Jass 中那样将它们全部声明在顶部。如果合理，请将声明与首次赋值合并。
 
-#### Type inference
+#### 类型推断
 
-Prefer using `var` and `let` over explicit types whenever possible.
+尽可能使用 `var` 和 `let` 进行类型推断，而不是显式指定类型。
 
-#### Immutability
+#### 不可变性
 
-Prefer using immutable data to mutable. Always declare local variables and members as `let` rather than `var` if they are not modified after initialization.
+倾向于使用不可变数据而非可变数据。如果局部变量和成员在初始化后不再被修改，应始终将其声明为 `let` 而不是 `var`。
 
-#### Using loops
+#### 循环的使用
 
-Prefer using higher-order functions (`filter`, `map` etc.) to loops. Exception: `forEach` (prefer using a regular for loop instead, unless the receiver of `forEach` is nullable or `forEach` is used as part of a longer call chain).
+倾向于使用高阶函数（`filter`、`map` 等）而非循环。例外：`forEach`（倾向于使用常规的 for 循环，除非 `forEach` 的接收者是可空的，或者 `forEach` 被用作更长调用链的一部分）。
 
-When making a choice between a complex expression using multiple higher-order functions and a loop, understand the cost of the operations being performed in each case and keep performance considerations in mind.
+在选择使用包含多个高阶函数的复杂表达式还是使用循环时，请了解每种情况下所执行操作的成本，并考虑性能问题。
 
-### Unit Testing
+### 单元测试
 
-Prefer test driven development if the feature is not too dependent on wc3 game mechanics. Create small, self-contained functions, annotate them with `@Test` individually and give them a descriptive name.
-Make sure to have at least one **assertion** inside your test to verify the behavior.
+如果功能不太依赖于 wc3 游戏机制，则倾向于使用测试驱动开发。创建小型的、自包含的函数，用 `@Test` 单独注解它们，并给它们一个描述性的名称。
+确保您的测试中至少包含一个**断言**以验证其行为。
 
-Tests should either be placed at the end of a package, or into a separate package suffixed `Tests` which will be ignored for autocomplete suggestions. Code and Tests should not be mixed.
+测试应放置在包的末尾，或者放置在一个以 `Tests` 为后缀的独立包中，该包将被自动补全建议所忽略。代码和测试不应混合在一起。

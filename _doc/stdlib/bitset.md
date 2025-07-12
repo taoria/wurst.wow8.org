@@ -1,5 +1,5 @@
 ---
-title: Hash Map
+title: 哈希映射
 layout: stdlibdoc
 color: blue
 date: 2019-01-19
@@ -7,4 +7,4 @@ sections:
   - /stdlib/data/bitset
 ---
 
-**[SOURCE ON GITHUB](https://github.com/wurstscript/WurstStdlib2/blob/master/wurst/data/BitSet.wurst)**
+**[GitHub 源代码](https://github.com/wurstscript/WurstStdlib2/blob/master/wurst/data/BitSet.wurst)**

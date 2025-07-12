@@ -1,24 +1,24 @@
 ---
-title: Creating unit object data
+title: 创建单位对象数据
 sections:
-- Intro
+- 简介
 - UnitDefinition
 - HeroDefinition
 - BuildingDefinition
 ---
 
-### Intro
+### 简介
 
-In warcraft III basically all units have the same attributes, but some options only become available when the unit is marked as hero or building.
-The standard library definitions are therefore split into `UnitDefinition`, `HeroDefinition`, `BuildingDefinition` and `BuildingAndHeroDefinition`.
+在魔兽争霸III中，基本上所有单位都具有相同的属性，但某些选项仅在单位被标记为英雄或建筑时才可用。
+因此，标准库定义被分为 `UnitDefinition`、`HeroDefinition`、`BuildingDefinition` 和 `BuildingAndHeroDefinition`。
 
 ### UnitDefinition
 
-`UnitDefinition` incorporates all units that are neither a hero nor a building. To avoid having to deal with raw ids and id collision, you should use the provided preset Id Generators from the `IdGenerator` package.
+`UnitDefinition` 包含了所有既不是英雄也不是建筑的单位。为避免处理原始ID和ID冲突，您应该使用 `IdGenerator` 包中提供的预设ID生成器。
 
-> Note that Warcraft III considers any unit with an id starting with an uppercase letter a hero, even when not using HeroDefinition
+> 请注意，魔兽争霸III会将在ID以大写字母开头的任何单位都视作英雄，即使未使用 HeroDefinition。
 
-Example from `DummyRecycler`:
+来自 `DummyRecycler` 的示例：
 
 ```wurst
 let DUMMY_UNIT_ID = compiletime(UNIT_ID_GEN.next())
@@ -56,9 +56,9 @@ let DUMMY_UNIT_ID = compiletime(UNIT_ID_GEN.next())
 
 ### HeroDefinition
 
-Use `HeroDefinition` for heroes that aren't buildings. Additionaly to using `HeroDefinition` you also need to provide an id that starts with an uppercase letter. Use the `HERO_ID_GEN` Id Generator. Example hero based on paladin:
+对于非建筑的英雄，请使用 `HeroDefinition`。除了使用 `HeroDefinition` 之外，您还需要提供一个以大写字母开头的ID。请使用 `HERO_ID_GEN` ID生成器。基于圣骑士的英雄示例：
 
-> If the id provided does not start with an uppercase letter, the unit will not be a hero.
+> 如果提供的ID不是以大写字母开头，该单位将不会成为英雄。
 
 ```wurst
 let ESC_STRONG_ID = compiletime(HERO_ID_GEN.next())
@@ -87,7 +87,7 @@ let ESC_STRONG_ID = compiletime(HERO_ID_GEN.next())
 
 ### BuildingDefinition
 
-Use `BuildingDefinition` or `BuildingAndHeroDefinition` respectively to create buildings.
+分别使用 `BuildingDefinition` 或 `BuildingAndHeroDefinition` 来创建建筑。
 
 ```wurst
 let WAYPOINT_ID = compiletime(UNIT_ID_GEN.next())

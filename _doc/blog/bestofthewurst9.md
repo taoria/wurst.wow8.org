@@ -1,7 +1,7 @@
 ---
-title: Best of the Wurst 9 - Happy Holidays
+title: Wurst 精选 9 - 节日快乐
 layout: post
-excerpt: We take a look at stack traces
+excerpt: 我们来看看堆栈跟踪
 icon:
   type: fa
   name: fa-servicestack
@@ -12,35 +12,37 @@ banner: /assets/images/blog/bestof9/wurstbanner9.png
 ---
 ------
 
-![](/assets/images/blog/bestof9/wurstbanner9.png){: .img-responsive}
 
-In the last couple of months, we have reached over 100 stars on GitHub, updated our [homepage](https://wurstlang.org), and as usual caught up with support for Warcraft 3 patches `1.30.2` and beyond.
+![](/assets/images/blog/bestof9/wurstbanner9.png)
+{: .img-responsive}
+
+在过去的几个月里，我们在 GitHub 上获得了超过 100 颗星，更新了我们的[主页](https://wurstlang.org)，并一如既往地跟进了对魔兽争霸 3 补丁 `1.30.2` 及更高版本的支持。
 
 
-Tool updates
+工具更新
 ---
-* The wurst family of tools now supports the latest battle.net stable patch (1.30.2).
-* The wurst language was updated to allow `class`es to contain tuple array members.
-* Improper usage of generic types now throws proper compilation errors
-* Attempting to access objects that are known to have already been destroyed now fails at compile time.
-* Fixed a bug in local optimizations which caused unexpected behavior.
-* Wurst no longer requires JavaFX, which enables wurst builds in a wider range of java distributions.
+* Wurst 系列工具现已支持最新的战网稳定补丁 (1.30.2)。
+* Wurst 语言已更新，允许 `class` 包含元组数组成员。
+* 不当使用泛型现在会抛出正确的编译错误。
+* 尝试访问已知已被销毁的对象现在会在编译时失败。
+* 修复了局部优化中一个导致意外行为的错误。
+* Wurst 不再需要 JavaFX，这使得 Wurst 可以在更广泛的 Java 发行版中进行构建。
 
-Standard library highlights
+标准库亮点
 ---
-* Merged over a dozen awesome pull requests.
-* Added `DummyCaster` in addition to `InstantDummyCaster` for channel based spells, and spells with delayed effects.
-* Fixed some critical bugs in `HashList`, `HashSet` and `Knockback3D`.
-* We have newly-added [code conventions](https://wurstlang.org/manual.html#coding-conventions) - go align your formatting!
-* We have begun writing in-depth [package documentation](https://wurstlang.org/stdlib)
+* 合并了十几个很棒的拉取请求。
+* 在 `InstantDummyCaster` 的基础上，为持续施法类法术和有延迟效果的法术添加了 `DummyCaster`。
+* 修复了 `HashList`、`HashSet` 和 `Knockback3D` 中的一些严重错误。
+* 我们新增了[代码规范](https://wurstlang.org/manual.html#coding-conventions) - 快去统一你的格式吧！
+* 我们已经开始编写深入的[包文档](https://wurstlang.org/stdlib)
 
-Spotlight: Stack traces
+焦点：堆栈跟踪
 ---
 
-Did you know that WurstScript generates stack traces for calls of `error(string msg)` from the `ErrorHandling` package?
-You might have seen this from a wurst error before - it will show you which lines in your code were executed in what order before the error occured.
+你知道吗？WurstScript 会为来自 `ErrorHandling` 包的 `error(string msg)` 调用生成堆栈跟踪。
+你可能之前在 Wurst 错误中见过这个——它会显示在错误发生前，你的代码中哪些行以何种顺序被执行了。
 
-Take a look at this example:
+看看这个例子：
 
 ```wurst
 package Test
@@ -58,8 +60,10 @@ init
 	foo()
 ```
 
-It produces the following stacktrace ingame:
+它在游戏中会产生以下堆栈跟踪：
 
-![](/assets/images/blog/bestof9/stacktrace.png){: .img-responsive}
 
-As you can see the most recent line comes at the top and the oldest at the bottom. Stack traces help tremendously with debugging errors, as it gives you a history of what happened before the error. Naturally they cause quite a performance hit. If you verified your map working well, you can disable them via the corresponding runarg `-stacktraces`, which is enabled by default.
+![](/assets/images/blog/bestof9/stacktrace.png)
+{: .img-responsive}
+
+如你所见，最近的调用行在最上面，最旧的在最下面。堆栈跟踪极大地帮助了错误调试，因为它为你提供了错误发生前的历史记录。当然，它们会造成相当大的性能开销。如果你已经验证了地图运行良好，可以通过相应的运行参数 `-stacktraces` 来禁用它们，该参数默认是启用的。

@@ -8,16 +8,16 @@ sections:
 - 施法事件
 ---
 
-### Intro
+### 简介
 
-`ClosureEvents.wurst` is a generalized event listener wrapper around Warcraft III events, making us of closures as listeners.
-Using closures allows you to carry over data and save listeners in variables.
+`ClosureEvents.wurst` 是一个围绕魔兽争霸 III 事件的通用事件监听器包装器，它使用闭包作为监听器。
+使用闭包允许你传递数据并将监听器保存在变量中。
 
-> Make sure to always use the EVENT_UNIT_**PLAYER** variants of the events for Closure events, even if it's just for a single unit. Instead use an appropriate version of .add() with a unit parameter
+> 确保对于闭包事件，始终使用事件的 EVENT_UNIT_**PLAYER** 变体，即使它只针对单个单位。相反，应使用带有单位参数的适当版本的 .add()。
 
-### Generic events
+### 通用事件
 
-In most cases you will want to use the generic `EvenetListener.add(..)` api. A few examples:
+在大多数情况下，你会希望使用通用的 `EventListener.add(..)` API。以下是一些示例：
 
 ```wurst
 EventListener.add(EVENT_PLAYER_UNIT_DEATH) ->
@@ -27,9 +27,9 @@ EventListener.add(specificUnit, EVENT_PLAYER_UNIT_DEATH) ->
 	Log.info("specificUnit died: " + GetTriggerUnit().getName())
 ```
 
-### Special events
+### 特殊事件
 
-The following events can also be used, but aren't of  `EVENT_PLAYER_UNIT_*` type:
+以下事件也可以使用，但它们不属于 `EVENT_PLAYER_UNIT_*` 类型：
 
 - EVENT_PLAYER_LEAVE
 - EVENT_UNIT_DAMAGED
@@ -37,9 +37,9 @@ The following events can also be used, but aren't of  `EVENT_PLAYER_UNIT_*` type
 - EVENT_PLAYER_ARROW_*
 - EVENT_PLAYER_MOUSE_*
 
-### Chat input event
+### 聊天输入事件
 
-Even though `EVENT_PLAYER_CHAT = ConvertPlayerEvent(16)` exists, it isn't the event used by the `TriggerRegisterPlayerChatEvent` native and doesn't give access to the entered message. Therefore you need to use `EVENT_PLAYER_CHAT_FILTER = ConvertPlayerEvent(96)` if you want access to  `GetEventPlayerChatString`.
+尽管存在 `EVENT_PLAYER_CHAT = ConvertPlayerEvent(16)`，但它并非 `TriggerRegisterPlayerChatEvent` 原生函数所使用的事件，也无法访问输入的消息。因此，如果你想访问 `GetEventPlayerChatString`，你需要使用 `EVENT_PLAYER_CHAT_FILTER = ConvertPlayerEvent(96)`。
 
 ```wurst
 EventListener.add(EVENT_PLAYER_CHAT_FILTER) ->
@@ -48,9 +48,9 @@ EventListener.add(EVENT_PLAYER_CHAT_FILTER) ->
 	...
 ```
 
-### Cast events
+### 施法事件
 
-For cast events there exist comfort wrappers starting with `EventListener.on`. For example:
+对于施法事件，存在以 `EventListener.on` 开头的便捷包装器。例如：
 
 ```wurst
 EventListener.onCast(MY_SPELL_ID) caster ->

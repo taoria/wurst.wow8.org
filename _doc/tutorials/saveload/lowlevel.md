@@ -25,17 +25,15 @@ new File("MyFileName.pld")..write("MyContent")..close()
 
 ## 同步例子
 
-Sync a string:
+同步一个字符串：
 ```wurst
 myString.sync() (synced) ->
 	Log.info("string synced: " + synced.getUnsafeString())
 ```
 
-Sync a ChunkedString:
+同步一个分块字符串：
 ```wurst
 myChunkedString.sync() (synced) ->
 	while synced.hasChunk()
 		Log.info("chunked string synced: " + synced.readChunk())
 ```
-
-

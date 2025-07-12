@@ -1,99 +1,98 @@
 ---
-title: Privacy Policy
+title: 隐私政策
 ---
 
-Personal data (usually referred to just as "data" below) will only be processed by us to the extent necessary and for the purpose of providing a functional and user-friendly website, including its contents, and the services offered there.
+个人数据（下文通常简称为“数据”）仅在必要范围内由我们处理，其目的是为了提供一个功能齐全且用户友好的网站，包括其内容和所提供的服务。
 
-Per Art. 4 No. 1 of Regulation (EU) 2016/679, i.e. the General Data Protection Regulation (hereinafter referred to as the "GDPR"), "processing" refers to any operation or set of operations such as collection, recording, organization, structuring, storage, adaptation, alteration, retrieval, consultation, use, disclosure by transmission, dissemination, or otherwise making available, alignment, or combination, restriction, erasure, or destruction performed on personal data, whether by automated means or not.
+根据欧盟法规 (EU) 2016/679 第 4 条第 1 款，即《通用数据保护条例》（以下简称“GDPR”），“处理”是指对个人数据执行的任何操作或一系列操作，无论是否通过自动化方式进行，例如收集、记录、组织、构建、存储、改编、更改、检索、咨询、使用、通过传输披露、传播或以其他方式提供、对齐或组合、限制、删除或销毁。
 
-The following privacy policy is intended to inform you in particular about the type, scope, purpose, duration, and legal basis for the processing of such data either under our own control or in conjunction with others. We also inform you below about the third-party components we use to optimize our website and improve the user experience which may result in said third parties also processing data they collect and control.
+以下隐私政策旨在特别告知您，我们自行或与他人共同处理此类数据的类型、范围、目的、期限和法律依据。我们还将在下文告知您，我们为优化网站和改善用户体验而使用的第三方组件，这可能导致所述第三方也处理他们收集和控制的数据。
 
-Our privacy policy is structured as follows:
+我们的隐私政策结构如下：
 
-# I. The rights of users and data subjects
+# I. 用户和数据主体的权利
 
-With regard to the data processing to be described in more detail below, users and data subjects have the right
+对于下文将更详细描述的数据处理，用户和数据主体有权：
 
-to confirmation of whether data concerning them is being processed, information about the data being processed, further information about the nature of the data processing, and copies of the data (cf. also Art. 15 GDPR);
-to correct or complete incorrect or incomplete data (cf. also Art. 16 GDPR);
-to the immediate deletion of data concerning them (cf. also Art. 17 DSGVO), or, alternatively, if further processing is necessary as stipulated in Art. 17 Para. 3 GDPR, to restrict said processing per Art. 18 GDPR;
-to receive copies of the data concerning them and/or provided by them and to have the same transmitted to other providers/controllers (cf. also Art. 20 GDPR);
-to file complaints with the supervisory authority if they believe that data concerning them is being processed by the controller in breach of data protection provisions (see also Art. 77 GDPR).
-In addition, the controller is obliged to inform all recipients to whom it discloses data of any such corrections, deletions, or restrictions placed on processing the same per Art. 16, 17 Para. 1, 18 GDPR. However, this obligation does not apply if such notification is impossible or involves a disproportionate effort. Nevertheless, users have a right to information about these recipients.
+确认我们是否正在处理与其相关的数据，获取有关正在处理的数据的信息，了解数据处理性质的更多信息，以及获取数据副本（另请参阅 GDPR 第 15 条）；
+更正或补充不正确或不完整的数据（另请参阅 GDPR 第 16 条）；
+立即删除与其相关的数据（另请参阅 GDPR 第 17 条），或者，如果根据 GDPR 第 17 条第 3 款的规定需要进一步处理，则根据 GDPR 第 18 条限制该处理；
+接收与其相关和/或由其提供的数据副本，并要求将这些数据传输给其他提供商/控制者（另请参阅 GDPR 第 20 条）；
+如果他们认为控制者处理其相关数据的行为违反了数据保护规定，有权向监管机构提出申诉（另请参阅 GDPR 第 77 条）。
+此外，根据 GDPR 第 16 条、第 17 条第 1 款和第 18 条，控制者有义务将其对数据进行的任何更正、删除或处理限制通知所有接收数据的接收方。但是，如果此类通知不可能或需要付出不成比例的努力，则此义务不适用。尽管如此，用户仍有权获取有关这些接收方的信息。
 
-Likewise, under Art. 21 GDPR, users and data subjects have the right to object to the controller's future processing of their data pursuant to Art. 6 Para. 1 lit. f) GDPR. In particular, an objection to data processing for the purpose of direct advertising is permissible.
+同样，根据 GDPR 第 21 条，用户和数据主体有权反对控制者未来根据 GDPR 第 6 条第 1 款 f) 项对其数据进行的处理。特别是，允许反对以直接营销为目的的数据处理。
 
-# II. Information about the data processing
+# II. 关于数据处理的信息
 
-Your data processed when using our website will be deleted or blocked as soon as the purpose for its storage ceases to apply, provided the deletion of the same is not in breach of any statutory storage obligations or unless otherwise stipulated below.
+当您使用我们网站时处理的数据，一旦其存储目的不再适用，将被删除或阻止，前提是删除行为不违反任何法定的存储义务，或除非下文另有规定。
 
-Cookies
-a) Session cookies
-We use cookies on our website. Cookies are small text files or other storage technologies stored on your computer by your browser. These cookies process certain specific information about you, such as your browser, location data, or IP address.  
+Cookie
+a) 会话 Cookie
+我们在网站上使用 Cookie。Cookie 是由您的浏览器存储在您计算机上的小型文本文件或其他存储技术。这些 Cookie 会处理关于您的某些特定信息，例如您的浏览器、位置数据或 IP 地址。
 
-This processing makes our website more user-friendly, efficient, and secure, allowing us, for example, to display our website in different languages or to offer a shopping cart function.
+这种处理使我们的网站更加用户友好、高效和安全，例如，允许我们以不同语言显示网站或提供购物车功能。
 
-The legal basis for such processing is Art. 6 Para. 1 lit. b) GDPR, insofar as these cookies are used to collect data to initiate or process contractual relationships.
+此类处理的法律依据是 GDPR 第 6 条第 1 款 b) 项，前提是这些 Cookie 用于收集数据以启动或处理合同关系。
 
-If the processing does not serve to initiate or process a contract, our legitimate interest lies in improving the functionality of our website. The legal basis is then Art. 6 Para. 1 lit. f) GDPR.
+如果处理目的不是为了启动或处理合同，我们的合法利益在于改善我们网站的功能。此时的法律依据是 GDPR 第 6 条第 1 款 f) 项。
 
-When you close your browser, these session cookies are deleted.
+当您关闭浏览器时，这些会话 Cookie 将被删除。
 
-b) Third-party cookies
-If necessary, our website may also use cookies from companies with whom we cooperate for the purpose of advertising, analyzing, or improving the features of our website.
+b) 第三方 Cookie
+如有必要，我们的网站也可能使用来自我们合作公司的 Cookie，其目的在于广告、分析或改进我们网站的功能。
 
-Please refer to the following information for details, in particular for the legal basis and purpose of such third-party collection and processing of data collected through cookies.
+有关详细信息，特别是此类第三方通过 Cookie 收集和处理数据的法律依据和目的，请参阅以下信息。
 
-c) Disabling cookies
-You can refuse the use of cookies by changing the settings on your browser. Likewise, you can use the browser to delete cookies that have already been stored. However, the steps and measures required vary, depending on the browser you use. If you have any questions, please use the help function or consult the documentation for your browser or contact its maker for support. Browser settings cannot prevent so-called flash cookies from being set. Instead, you will need to change the setting of your Flash player. The steps and measures required for this also depend on the Flash player you are using. If you have any questions, please use the help function or consult the documentation for your Flash player or contact its maker for support.
+c) 禁用 Cookie
+您可以通过更改浏览器设置来拒绝使用 Cookie。同样，您也可以使用浏览器删除已存储的 Cookie。但是，所需的步骤和措施因您使用的浏览器而异。如有任何疑问，请使用帮助功能或查阅您的浏览器文档，或联系其制造商寻求支持。浏览器设置无法阻止所谓的 Flash Cookie 的设置。您需要更改 Flash 播放器的设置。为此所需的步骤和措施也取决于您使用的 Flash 播放器。如有任何疑问，请使用帮助功能或查阅您的 Flash 播放器文档，或联系其制造商寻求支持。
 
-If you prevent or restrict the installation of cookies, not all of the functions on our site may be fully usable.
+如果您阻止或限制 Cookie 的安装，我们网站上的所有功能可能无法完全使用。
 
 Google Analytics
-We use Google Analytics on our website. This is a web analytics service provided by Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043 (hereinafter: Google).
+我们在网站上使用 Google Analytics。这是由 Google Inc.（地址：1600 Amphitheatre Parkway, Mountain View, CA 94043，以下简称：Google）提供的一项网络分析服务。
 
-Through certification according to the EU-US Privacy Shield
+通过欧盟-美国隐私护盾认证
 
 <https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active>
 
-Google guarantees that it will follow the EU's data protection regulations when processing data in the United States.
+Google 保证在处理美国的数据时将遵守欧盟的数据保护法规。
 
-The Google Analytics service is used to analyze how our website is used. The legal basis is Art. 6 Para. 1 lit. f) GDPR. Our legitimate interest lies in the analysis, optimization, and economic operation of our site.
+Google Analytics 服务用于分析我们网站的使用情况。法律依据是 GDPR 第 6 条第 1 款 f) 项。我们的合法利益在于对我们网站的分析、优化和经济运营。
 
-Usage and user-related information, such as IP address, place, time, or frequency of your visits to our website will be transmitted to a Google server in the United States and stored there. However, we use Google Analytics with the so-called anonymization function, whereby Google truncates the IP address within the EU or the EEA before it is transmitted to the US.
+与使用和用户相关的信息，例如 IP 地址、地点、时间或您访问我们网站的频率，将被传输到美国的 Google 服务器并存储在那里。但是，我们使用带有匿名化功能的 Google Analytics，即 Google 在将 IP 地址传输到美国之前，会在欧盟或欧洲经济区内截断该 IP 地址。
 
-The data collected in this way is in turn used by Google to provide us with an evaluation of visits to our website and what visitors do once there. This data can also be used to provide other services related to the use of our website and of the internet in general.
+Google 会反过来使用以这种方式收集的数据，为我们提供关于网站访问情况以及访问者在网站上行为的评估。这些数据也可用于提供与我们网站使用和一般互联网使用相关的其他服务。
 
-Google states that it will not connect your IP address to other data. In addition, Google provides further information with regard to its data protection practices at
+Google 声明不会将您的 IP 地址与其他数据相关联。此外，Google 在以下网址提供了有关其数据保护实践的更多信息：
 
-<https://www.google.com/intl/de/policies/privacy/partners>,
+<https://www.google.com/intl/de/policies/privacy/partners>，
 
-including options you can exercise to prevent such use of your data.
+包括您可以用来阻止此类数据使用的选项。
 
-In addition, Google offers an opt-out add-on at
+此外，Google 在以下网址提供了一个选择退出的插件：
 
 <https://tools.google.com/dlpage/gaoptout?hl=en>
 
-in addition with further information. This add-on can be installed on the most popular browsers and offers you further control over the data that Google collects when you visit our website. The add-on informs Google Analytics' JavaScript (ga.js) that no information about the website visit should be transmitted to Google Analytics. However, this does not prevent information from being transmitted to us or to other web analytics services we may use as detailed herein.
+并附有更多信息。该插件可以安装在最流行的浏览器上，让您对 Google 在您访问我们网站时收集的数据有更多的控制权。该插件会通知 Google Analytics 的 JavaScript (ga.js)，不应将有关网站访问的任何信息传输给 Google Analytics。但是，这并不妨碍信息传输给我们或我们可能使用的此处详述的其他网络分析服务。
 
 Google Fonts
-Our website uses Google Fonts to display external fonts. This is a service provided by Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043 (hereinafter: Google).
+我们的网站使用 Google Fonts 来显示外部字体。这是由 Google Inc.（地址：1600 Amphitheatre Parkway, Mountain View, CA 94043，以下简称：Google）提供的一项服务。
 
-Through certification according to the EU-US Privacy Shield
+通过欧盟-美国隐私护盾认证
 
 <https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active>
 
-Google guarantees that it will follow the EU's data protection regulations when processing data in the United States.
+Google 保证在处理美国的数据时将遵守欧盟的数据保护法规。
 
-To enable the display of certain fonts on our website, a connection to the Google server in the USA is established whenever our website is accessed.
+为了能够在我们的网站上显示某些字体，每当访问我们的网站时，都会建立与美国 Google 服务器的连接。
 
-The legal basis is Art. 6 Para. 1 lit. f) GDPR. Our legitimate interest lies in the optimization and economic operation of our site.
+法律依据是 GDPR 第 6 条第 1 款 f) 项。我们的合法利益在于对我们网站的优化和经济运营。
 
-When you access our site, a connection to Google is established from which Google can identify the site from which your request has been sent and to which IP address the fonts are being transmitted for display.
+当您访问我们的网站时，会建立与 Google 的连接，Google 可以通过该连接识别您的请求是从哪个网站发送的，以及字体要传输到哪个 IP 地址进行显示。
 
-Google offers detailed information at
+Google 在以下网址提供详细信息：
 
 <https://adssettings.google.com/authenticated>
 
 <https://policies.google.com/privacy>
-

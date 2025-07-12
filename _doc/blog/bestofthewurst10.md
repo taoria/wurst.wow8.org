@@ -1,7 +1,7 @@
 ---
-title: Best of the Wurst 10
+title: Wurst 精选 10
 layout: post
-excerpt: Big spring update & 420
+excerpt: 春季大更新 & 420
 icon:
   type: fa
   name: fa-servicestack
@@ -12,95 +12,103 @@ banner: /assets/images/blog/bestof10/wurstbanner10.png
 ---
 ------
 
-Best of the Wurst 10
-===
-![](/assets/images/blog/bestof10/wurstbanner10.png){: .img-responsive}
-
-In March and early April, we rolled out the previously announced `wurst.build` configuration file improvements, allowing for further code-based map metadata customization, and also laying additional groundwork for the independent map generation pipeline we envisage for the future of wurst.
-
-You can now make full use of the toolsuite from the command line with our new Grill package manager. Additionally, welcome `DamageEvent` to the standard library: a new damage detection and modification API, which supports and uses the new 1.29 natives.
-
-Tooling
----
-* Upgrades to the `wurst.build` configuration workflow. You can now modify scenario data such as players, teams, and loading screens, all without opening the world-editor. See the [Tutorial](https://wurstlang.org/tutorials/wurstbuild.html) for more information.
-* The WurstSetup received a face lift, including auto-update, better async tasks, and complete CLI functionality for power users.
-* Objects and other allocations inside `compiletime` expressions are now retained for use during runtime.
-* Updated `switch` statement with joined cases, duplicate case detection, and control flow improvements.
-* Experimental support for @lep's ["hot code reload"](https://wurstlang.org/tutorials/jhcr.html), which enables code modifications while the map is running.
-
-Standard library
----
-
-We merged over a dozen pull requests, and fixed plenty of bugs, thanks to many contributors, which we're very excited about. The highlights:
-
-* Added the new package `DamageEvent` for damage detection and modification, and deprecated the older `DamageType` package.
-* The timer used for `ClosureTimer` executions can now be customized, allowing for the creation of a timer dialog.
-* Package `LastOrder` has been cleaned up and fixed.
-* Package `Printing` can now be fully configured.
-* Package `ClosureEvents` now only listens to mouse events if those events are used.
-* Package `OrderStringFactory` no longer generates default unit order strings, so they can be distinguished in events.
-* Generalized `damageTarget` and `isAliveTrick` from unit to widget.
-* Added additional overloads for `flashEffect`.
-* Added shorthand `.setDummyAbility()` to make any ability castable by a dummy caster.
-* `DummyCaster` dummy units can now be accessed via the dummy caster API.
-* Fixed nested indexing/deindexing in UnitIndexer.
-* Fixed counted callbacks not stopping properly in certain cases.
-* Fixed `image.hideForPlayer`, and improved image documentation.
-* Fixed `TimedLoop` instances being executed incorrectly after stopping the loop.
-
-Website
----
-* Added further - and improved existing - standard library [documentation](https://wurstlang.org/stdlib) pages.
-* We also recently rolled out a new [tutorial on closures](https://wurstlang.org/tutorials/getclose.html) - be sure to check it out.
-* Webpage interface breadcrumbs for tutorial, stdlib, and blog posts now include all parents.
-* Our domain is now verified on GitHub.
-
-
-Spotlight
+Wurst 精选 10
 ===
 
-![](/assets/images/blog/bestof10/grillpm.jpg){: .img-responsive}
+![](/assets/images/blog/bestof10/wurstbanner10.png)
+{: .img-responsive}
 
-## Introduction
+在三月和四月初，我们推出了先前宣布的 `wurst.build` 配置文件改进，允许进一步基于代码的地图元数据自定义，并为我们设想的未来 wurst 独立地图生成管道奠定了更多基础。
 
-If you have been using Wurst for some time, you most likely made use of the Wurst Setup tool to install WurstScript, generate your project, and update dependencies. We started with a graphical solution first, to enable everyone to install and use wurst easily. Now that the Setup tool has matured, we are improving the command line interface for more advanced terminal users.
+现在，您可以通过我们新的 Grill 包管理器从命令行充分利用该工具套件。此外，标准库迎来了 `DamageEvent`：一个新的伤害检测和修改 API，它支持并使用了新的 1.29 原生函数。
 
-Note that all of these improvements are added to the existing setup, and if you don't want to make use of them, you don't have to! The only breaking change here is the new command line argument syntax, which is now unified and more aligned with other package managers. Running grill without any arguments will open the GUI (Wurst Setup) frontend, as before. Passing any argument will assume CLI usage.
+工具
+---
+*   对 `wurst.build` 配置工作流进行了升级。您现在可以修改场景数据，如玩家、队伍和加载屏幕，所有这些都无需打开世界编辑器。更多信息请参阅[教程](https://wurstlang.org/tutorials/wurstbuild.html)。
+*   WurstSetup 进行了界面更新，包括自动更新、更好的异步任务以及为高级用户提供的完整 CLI 功能。
+*   `compiletime` 表达式内的对象和其他分配现在会在运行时保留以供使用。
+*   更新了 `switch` 语句，支持合并 case、重复 case 检测和控制流改进。
+*   实验性支持 @lep 的 [“热代码重载”](https://wurstlang.org/tutorials/jhcr.html)，该功能允许在地图运行时修改代码。
 
-## Grill Wrapper
+标准库
+---
 
-Since all additions are kept in the setup, we proudly present the `grill` wrapper for easy CLI usage of the setup tool on any system.
+我们合并了十几个拉取请求，并修复了大量错误，这要感谢众多贡献者，我们对此感到非常兴奋。主要亮点包括：
 
-### How do I get it ?
+*   添加了用于伤害检测和修改的新包 `DamageEvent`，并弃用了旧的 `DamageType` 包。
+*   用于 `ClosureTimer` 执行的计时器现在可以自定义，从而可以创建计时器对话框。
+*   包 `LastOrder` 已被清理和修复。
+*   包 `Printing` 现在可以完全配置。
+*   包 `ClosureEvents` 现在仅在使用了鼠标事件时才会监听它们。
+*   包 `OrderStringFactory` 不再生成默认的单位命令字符串，以便在事件中可以区分它们。
+*   将 `damageTarget` 和 `isAliveTrick` 从 unit 推广到 widget。
+*   为 `flashEffect` 添加了额外的重载。
+*   添加了简写 `.setDummyAbility()`，使任何技能都可以由虚拟施法者施放。
+*   现在可以通过虚拟施法者 API 访问 `DummyCaster` 的虚拟单位。
+*   修复了 UnitIndexer 中的嵌套索引/取消索引问题。
+*   修复了计数回调在某些情况下无法正常停止的问题。
+*   修复了 `image.hideForPlayer`，并改进了图像文档。
+*   修复了 `TimedLoop` 实例在停止循环后执行不正确的问题。
 
-Simply use the setup tool UI to install or update your wurstscript installation. Everything new is shipped inside.
+网站
+---
+*   添加了更多并改进了现有的标准库[文档](https://wurstlang.org/stdlib)页面。
+*   我们最近还推出了一个新的[关于闭包的教程](https://wurstlang.org/tutorials/getclose.html) - 一定要去看看。
+*   教程、标准库和博客文章的网页界面面包屑导航现在包含所有父级。
+*   我们的域名现已在 GitHub 上得到验证。
 
-To make proper use of the `grill` command in shells system wide, you need to add the Wurst installation folder (~/.wurst) to your environment PATH variable. How this is done varies a lot depending on your platform - refer to this [tutorial](https://www.java.com/en/download/help/path.xml). On Windows 10, the final result should look like this:
-![](https://i.imgur.com/8bFJJVT.jpg){: .img-responsive}
 
-Now you can use the grill commands. Emoji support depends on the particular terminal you are using.
+焦点
+===
 
-![](https://i.imgur.com/FNSBYgD.jpg){: .img-responsive}
 
-### Headless Execution
+![](/assets/images/blog/bestof10/grillpm.jpg)
+{: .img-responsive}
 
-The main benefit to having a fully-featured command line interface is that you can run it on systems that have no display (headless). This enables us to automate the wurst mapfile build process easily - for example in continuous integration, as described below.
+## 简介
 
-Passing any command-line argument to `grill` ensures that no user interface will prompt the user.
+如果您已经使用 Wurst 一段时间，您很可能已经使用过 Wurst Setup 工具来安装 WurstScript、生成项目和更新依赖项。我们首先从图形化解决方案开始，以便每个人都能轻松安装和使用 wurst。现在 Setup 工具已经成熟，我们正在为更高级的终端用户改进命令行界面。
 
-### The special wurstscript package
+请注意，所有这些改进都是在现有设置的基础上添加的，如果您不想使用它们，也完全可以！这里唯一的破坏性变更是新的命令行参数语法，它现在是统一的，并且与其他包管理器更加一致。不带任何参数运行 grill 将像以前一样打开 GUI (Wurst Setup) 前端。传递任何参数都将假定为 CLI 用法。
 
-Use `grill install wurstscript` to install, or update an existing installation of, the WurstScript tools. The installation will be the same as for the setup, inside your user's home folder `~/.wurst`.
+## Grill 包装器
 
-### Generating a new project
+由于所有新增功能都保留在 setup 工具中，我们自豪地推出 `grill` 包装器，以便在任何系统上轻松使用 setup 工具的 CLI。
 
-`grill generate <project_name>` will create a new directory with your chosen name, and generate a new wurst project inside. The generation includes an up-to-date copy of the default standard library dependency, and basic vscode project configuration metadata.
+### 如何获取？
 
-### Importing an existing project
+只需使用 setup 工具的 UI 来安装或更新您的 wurstscript 安装。所有新功能都已包含在内。
 
-Unlike installing WurstScript or generating a project, the following commands are expected to be run from your project's root folder.
+为了在系统范围内的 shell 中正确使用 `grill` 命令，您需要将 Wurst 安装文件夹 (~/.wurst) 添加到您的环境 PATH 变量中。具体操作方法因平台而异 - 请参阅此[教程](https://www.java.com/en/download/help/path.xml)。在 Windows 10 上，最终结果应如下所示：
 
-If you have an existing project, or want to contribute to someone else's project, you only need to install the project once after cloning/copying. This fetches a local copy of any dependencies that the project requires.
+![](https://i.imgur.com/8bFJJVT.jpg)
+{: .img-responsive}
+
+现在您可以使用 grill 命令了。表情符号的支持取决于您使用的特定终端。
+
+
+![](https://i.imgur.com/FNSBYgD.jpg)
+{: .img-responsive}
+
+### 无头执行
+
+拥有功能齐全的命令行界面的主要好处是，您可以在没有显示器（无头）的系统上运行它。这使我们能够轻松地自动化 wurst 地图文件的构建过程 - 例如在持续集成中，如下所述。
+
+向 `grill` 传递任何命令行参数可确保不会有用户界面提示用户。
+
+### 特殊的 wurstscript 包
+
+使用 `grill install wurstscript` 来安装或更新现有的 WurstScript 工具。安装将与 setup 工具相同，位于您的用户主文件夹 `~/.wurst` 中。
+
+### 生成新项目
+
+`grill generate <project_name>` 将创建一个以您选择的名称命名的新目录，并在其中生成一个新的 wurst 项目。生成的内容包括默认标准库依赖项的最新副本以及基本的 vscode 项目配置元数据。
+
+### 导入现有项目
+
+与安装 WurstScript 或生成项目不同，以下命令应在您项目的根文件夹中运行。
+
+如果您有一个现有项目，或者想为他人的项目做贡献，您只需在克隆/复制后安装一次项目即可。这将获取项目所需的所有依赖项的本地副本。
 
 ```
 $ git clone <git_repo_url>
@@ -108,39 +116,33 @@ $ cd <repo_name>
 $ grill install
 ```
 
-### Package Management
+### 包管理
 
-`grill` is not a fully-fledged package manager, as it doesn't resolve transitive dependencies.
-It mainly pulls a list of git repositories for you, and configures them for the wurst compilation.
-Soon, we'll add support for dependencies on branch or commit ID.
-The following commands must be executed from within a project's root folder.
+`grill` 不是一个功能完备的包管理器，因为它不解析传递性依赖。它主要是为您拉取一个 git 仓库列表，并为 wurst 编译配置它们。很快，我们将添加对分支或提交 ID 依赖的支持。以下命令必须在项目的根文件夹内执行。
 
-Installing a new git dependency:
+安装新的 git 依赖：
 `grill install <git_repo_url>`
 
-Removing a git dependency:
+移除 git 依赖：
 `grill remove <git_repo_url>`
 
-Updating existing dependencies:
+更新现有依赖：
 `grill install`
 
-### Continuous Integration
+### 持续集成
 
-Simplified, CI is the process of automating the building and testing of your project on each version change (commit).
-Popular git hosts such as bitbucket, gitlab, and github enable us to use CI with our wurst projects.
-Arguably, the easiest way to do this is to use the docker-wurst image.
+简而言之，CI 是在每次版本更改（提交）时自动化构建和测试项目的过程。流行的 git 主机（如 bitbucket、gitlab 和 github）使我们能够将 CI 用于我们的 wurst 项目。可以说，最简单的方法是使用 docker-wurst 镜像。
 
-#### Wurst Docker Image
+#### Wurst Docker 镜像
 
-Docker provides mechanisms to containerize applications and systems into images, which can be run similarly to a virtual machine.
-That machine then comes with all the tools and dependencies installed and preconfigured, so that you can immediately use `grill` from the command line.
+Docker 提供了将应用程序和系统容器化为镜像的机制，这些镜像的运行方式类似于虚拟机。该虚拟机预装并预配置了所有工具和依赖项，因此您可以立即从命令行使用 `grill`。
 
 ```
 $ docker run --rm -it frotty/wurstscript /bin/sh -c "grill help"
 ```
 
-[Travis CI example](https://github.com/wurstscript/WurstStdlib2/blob/master/.travis.yml)
+[Travis CI 示例](https://github.com/wurstscript/WurstStdlib2/blob/master/.travis.yml)
 
-[Circle CI example](https://github.com/island-troll-tribes/island-troll-tribes/blob/master/.circleci/config.yml)
+[Circle CI 示例](https://github.com/island-troll-tribes/island-troll-tribes/blob/master/.circleci/config.yml)
 
-That's it. We hope you enjoyed the tenth entry in the BotW series.
+就是这样。我们希望您喜欢 BotW 系列的第十篇文章。

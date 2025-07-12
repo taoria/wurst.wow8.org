@@ -1,7 +1,7 @@
 ---
-title: Hello Wurst
+title: 你好，Wurst
 layout: post
-excerpt: This is the beginning of the Wurst Blog and we talk about it.
+excerpt: 这是 Wurst 博客的开端，我们来聊聊它。
 icon:
   type: fa
   name: fa-rss
@@ -11,20 +11,19 @@ date: 2017-08-30
 banner: /assets/images/empty.png
 ---
 ------
-# Hello
+# 你好
 
-Hello and welcome to the Wurst Blog! This blog will be home to posts related to Wurst and its tools. Discussion here aims to be more concise, frequent, and casual, compared to our tutorials. It serves more as a news source to stay up to date on improvements in WurstScript, and how you can use it to it's fullest extent.
+你好，欢迎来到 Wurst 博客！本博客将发布与 Wurst 及其工具相关的文章。与我们的教程相比，这里的讨论旨在更加简洁、频繁和轻松。它更像是一个新闻源，让您及时了解 WurstScript 的改进，以及如何充分利用它。
 
-Our aim is to quarterly collect changes and newsworthy happenings into "This season in wurst" posts [see here].
+我们的目标是每季度将变更和值得关注的事件汇总到“Wurst 本季动态”文章中[参见此处]。
 
-# Where should I look for future blog posts?
+# 我应该在哪里查看未来的博客文章？
 
-A bookmark here might be appropriate, but we’ll also link here on [wc3modding.reddit.com](https://wc3modding.reddit.com), and for major posts, cross-post to [hiveworkshop.com](https://hiveworkshop.com).
-Starring our github projects is also a good indication of interest and appreciation.
+在这里添加书签可能很合适，但我们也会在 [wc3modding.reddit.com](https://wc3modding.reddit.com) 上链接到这里，对于主要文章，还会交叉发布到 [hiveworkshop.com](https://hiveworkshop.com)。
+为我们的 GitHub 项目加星也是表示兴趣和赞赏的好方法。
 
-# What’s new?
+# 有什么新内容？
 
-Wurst has steadily progressed in the recent years, with development continuing as time allowed. The language has now matured and can handle most use cases flawlessly. To make it more easily and widely available, we have completely revamped the website, made a new setup/update tool, and reorganized the whole source code. However, innumerable changes have taken place, and we don’t plan to retroactively summarise all of them.
+近年来，Wurst 稳步发展，开发工作在时间允许的情况下持续进行。该语言现已成熟，可以完美处理大多数用例。为了使其更容易、更广泛地被使用，我们彻底改造了网站，制作了一个新的安装/更新工具，并重组了整个源代码。然而，发生了无数的变化，我们不打算追溯性地总结所有这些变化。
 
-Check back soon as we plan our first summary post on This Summer in Wurst.
-
+请稍后回来查看，我们正计划发布第一篇关于“Wurst 今夏动态”的总结文章。

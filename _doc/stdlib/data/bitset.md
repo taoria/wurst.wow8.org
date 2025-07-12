@@ -7,15 +7,17 @@ sections:
 
 ### 导入
 
-A bitset is a set of smaller integers represented as one big one. Let's remind ourselves how the integer is represented in binary:
+位集（bitset）是将一组较小的整数表示为一个较大的整数。让我们回顾一下整数是如何用二进制表示的：
 
-![](/assets/images/stdlib/bitset.png){: .img-responsive}
 
-The picture illustrates how the final value is calculated from the powers of two. We can manipulate each bit by itself by adding and subtracting the particular power of two. Therefore the exponents can be respresented as a single bit inside the integer consisting of 32 bits, 31 of which are usable since one is used for the sign (- or +). This means that we can save a set of values 1 to 31 using just a single integer.
+![](/assets/images/stdlib/bitset.png)
+{: .img-responsive}
 
-### Usage
+上图说明了最终值是如何通过 2 的幂计算出来的。我们可以通过加上或减去特定的 2 的幂来单独操作每一位。因此，指数可以表示为一个由 32 位组成的整数中的一个位，其中 31 位是可用的，因为有一位用于表示符号（- 或 +）。这意味着我们仅用一个整数就可以保存一组 1 到 31 的值。
 
-Instead of saving and retrieving actual values, bitsets are usually used to save a bunch of booleans. In Wacraft III they can be found inside binary data e.g. for channel options. Those channel options are respectively represented as a bitset in the standard library, combined with an enum:
+### 使用
+
+位集通常不用于保存和检索实际值，而是用来保存一组布尔值。在《魔兽争霸 III》中，它们可以在二进制数据中找到，例如用于通道选项。这些通道选项在标准库中相应地表示为一个位集，并与一个枚举（enum）结合使用：
 
 ```wurst
 public enum Option

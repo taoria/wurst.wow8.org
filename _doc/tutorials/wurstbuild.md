@@ -1,5 +1,5 @@
 ---
-title: wurst.build文件
+title: wurst.build 文件
 excerpt: 一个能管理地图项目和各种依赖库的配置文件
 date: 2019-10-23
 icon:

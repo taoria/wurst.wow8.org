@@ -28,7 +28,9 @@ sections:
 打开项目文件夹是很重要的，这样Wurst才能检测到项目。
 打开后，您应该能看到如下所示的内容：
 
-![](/assets/images/beginner/ProjectExplorer.png){: .img-rounded .img-responsive}
+
+![](/assets/images/beginner/ProjectExplorer.png)
+{: .img-rounded .img-responsive}
 
 我们来看看所有的文件：
 - **/_build** 包含动态生成的内容，不应该手动更改。
@@ -50,11 +52,15 @@ sections:
 打开 **wurst** 文件夹内的 **Hello.wurst** 文件来启动Wurst插件。
 通过使用 `>runmap` 命令来运行项目。
 
-![](/assets/images/beginner/RunMap.png){: .img-responsive .img-rounded}
+
+![](/assets/images/beginner/RunMap.png)
+{: .img-responsive .img-rounded}
 
 文本 **Hello World** 将会显示在屏幕上。
 
-![](/assets/images/beginner/HelloWorld.png){: .img-responsive .img-rounded}
+
+![](/assets/images/beginner/HelloWorld.png)
+{: .img-responsive .img-rounded}
 
 让我们看看代码：
 
@@ -71,11 +77,11 @@ init
 	print("Hello World")
 ```
 第一行
-```wurst 
+```wurst
 package Wurst
 ```
 是包声明。每个文件只包含一个名称类似于文件名但没有后缀的包。除开注释以外，在任何.wurst文件中，包都必须在顶部声明。
-```wurst 
+```wurst
 // Wurst demo package
 init
 	print("Hello World")

@@ -1,14 +1,14 @@
 ---
 title: 博客
-excerpt: "'Best of the Wurst' 的首页<br>(最近更新：Feb '18)."
+excerpt: "'Best of the Wurst' 的首页<br>(最近更新：18年2月)."
 date: 2018-02-01
 color: pink
 icon:
   type: fa
   name: fa-rss
 layout: blog
-tagline: The Best of the Wurst!
-heading: All Posts
+tagline: Wurst 精选！
+heading: 所有文章
 redirect_from:
   - /blog/
 navigation:

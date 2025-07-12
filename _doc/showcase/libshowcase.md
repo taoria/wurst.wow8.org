@@ -1,5 +1,5 @@
 ---
-title: Libraries
+title: 库
 ---
 
 <!-- Start Row -->
@@ -9,7 +9,9 @@ title: Libraries
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/frentitypreview.png){: .img-responsive .center-block}](https://github.com/Frotty/Frentity)
+[
+![截图](/assets/images/showcase/frentitypreview.png)
+{: .img-responsive .center-block}](https://github.com/Frotty/Frentity)
 
 <div class="card-block" markdown="1">
 
@@ -17,9 +19,9 @@ title: Libraries
 #### Frentity
 
 {: .card-text}
-Lightweight entity framework for a sleek, bootstrapped map development experience.
+轻量级实体框架，提供流畅、引导式的地图开发体验。
 
-[*&nbsp;*{: .fa .fa-external-link-square} Git Repo](https://github.com/Frotty/Frentity)
+[*&nbsp;*{: .fa .fa-external-link-square} Git 仓库](https://github.com/Frotty/Frentity)
 
 </div>
 
@@ -32,7 +34,9 @@ Lightweight entity framework for a sleek, bootstrapped map development experienc
 <div class="col-sm-6 col-xs-12">
 <div class="card" markdown="1">
 
-[![screenshot](/assets/images/showcase/wurstlodash.png){: .img-responsive .center-block}](https://github.com/theQuazz/wurst-lodash)
+[
+![截图](/assets/images/showcase/wurstlodash.png)
+{: .img-responsive .center-block}](https://github.com/theQuazz/wurst-lodash)
 
 <div class="card-block" markdown="1">
 
@@ -40,9 +44,9 @@ Lightweight entity framework for a sleek, bootstrapped map development experienc
 #### Wurst Lodash
 
 {: .card-text}
-Functional Programming Utilities for WurstScript inspired by Lodash.
+受 Lodash 启发的 WurstScript 函数式编程工具。
 
-[*&nbsp;*{: .fa .fa-external-link-square} Git Repo](https://github.com/theQuazz/wurst-lodash)
+[*&nbsp;*{: .fa .fa-external-link-square} Git 仓库](https://github.com/theQuazz/wurst-lodash)
 
 </div>
 

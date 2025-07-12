@@ -16,25 +16,26 @@ VSCode 是一个免费、开源、跨平台的代码编辑器。
 
 完成后，打开VSCode并继续下一步。
 
-### 安装 Wurst 插件
+### 配置Wurst语言支持
 
-按下F1键打开VSCode的命令窗口，输入指令：`> Install Extensions`：
+1. 使用 `Ctrl+Shift+P` 打开命令面板
+2. 输入并选择 `Extensions: Install Extensions`
 
-![](/assets/images/setup/InstallExtensions.png){: .img-responsive}
+
+![](/assets/images/setup/InstallExtensions.png)
+{: .img-responsive}
 
 左侧打开的面板中，在搜索栏中输入 **Wurst** 然后按下回车键，安装 **Wurst language support** 插件。
 
-![](/assets/images/setup/InstallWurstExtension.png){: .img-responsive}
 
-> (国内1.27用户，按照上面的办法，安装如下插件)
->
-> chinese（中文语言包）
->
-> Tasks（支持左下角编译地图的标签）
->
-> jass （看vjass代码用的插件）
->
-> blp-preview （编辑器里看模型用的）
+![](/assets/images/setup/InstallWurstExtension.png)
+{: .img-responsive}
+
+#### 国内用户必备插件：
+1. `Chinese (Simplified) Language Pack` - 中文语言包
+2. `Tasks` - 任务执行器(用于地图编译)
+3. `Jass` - Jass语法高亮
+4. `BLP Preview` - 模型文件预览
 
 
 

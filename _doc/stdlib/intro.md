@@ -23,7 +23,7 @@ WurstScript标准库提供了大量有用的包来帮助开发者开始wurst之�
 ### 总览
 
 > 本篇目前还不完整,等待补完
-> Any help would be appreciated - please open an [issue](https://github.com/wurstscript/wurstscript.github.io/issues/new), or make a [pull request](https://github.com/wurstscript/wurstscript.github.io/pulls).
+> 欢迎任何帮助 - 请提交一个 [问题](https://github.com/wurstscript/wurstscript.github.io/issues/new) 或发起一个 [拉取请求](https://github.com/wurstscript/wurstscript.github.io/pulls)。
 
 ### *&nbsp;*{: .fa .fa-folder-open} _wurst
 
@@ -78,6 +78,3 @@ WurstScript标准库提供了大量有用的包来帮助开发者开始wurst之�
 ### *&nbsp;*{: .fa .fa-folder-open} Util
 
 &nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;*{: .fa .fa-file} [对话框](stdlib/dialogbox)
-
-
-

@@ -1,28 +1,30 @@
 ---
-title: Creating warcraft dialogs
+title: 创建魔兽争霸对话框
 sections:
-- Intro
-- The DialogBox
+- 简介
+- DialogBox
 ---
 
-![https://wurstlang.org](/assets/images/stdlib/dialogbox.jpg){: .img-responsive}
 
-### Intro
+![https://wurstlang.org](/assets/images/stdlib/dialogbox.jpg)
+{: .img-responsive}
 
-In warcraft III a dialog refers to a modal dialog that is shown to players with a message text and various buttons to click.
-Dialogs have several drawbacks, such as disabling user input and chat, and thus should only be seldomly used in multiplayer.
+### 简介
 
-### The DialogBox
+在魔兽争霸 III 中，对话框（dialog）指的是向玩家显示的模态对话框，其中包含消息文本和各种可供点击的按钮。
+对话框有几个缺点，例如会禁用用户输入和聊天，因此在多人游戏模式中应谨慎使用。
 
-If you want to create a dialog though, make use of the `DialogBox` class. You can eiher reuse the same `DialogBox` and use `GetTriggerPlayer()` to get the player in the click event:
+### DialogBox
+
+如果你想创建一个对话框，可以使用 `DialogBox` 类。你可以重复使用同一个 `DialogBox`，并在点击事件中使用 `GetTriggerPlayer()` 来获取玩家：
 
 ```wurst
 init
-	let dBox = new DialogBox("Are you a noob?")
-	dBox.addButton("Yes") ->
+	let dBox = new DialogBox("你是个新手吗？")
+	dBox.addButton("是") ->
 		GetTriggerPlayer()..addGold(500)..display(GetTriggerPlayer(), false)
 
-	dBox.addButton("No", () -> dBox.display(GetTriggerPlayer(), false))
+	dBox.addButton("否", () -> dBox.display(GetTriggerPlayer(), false))
 
 	doAfter(0.1) ->
 		// Don't call display during init
@@ -31,27 +33,27 @@ init
 ```
 
 
-Example with global and display on spellcast:
+使用全局变量并在施法时显示的示例：
 
 ```wurst
-constant GOLD_BOX = new DialogBox("Extra starting gold?")
+constant GOLD_BOX = new DialogBox("需要额外的初始金币吗？")
 
 init
 	// add buttons
-	dBox.addButton("Yes") ->
+	dBox.addButton("是") ->
 		...
 
 	EventListener.onCast(SPELL_ID) (caster) ->
 		GOLD_BOX.display(caster, true)
 ```
 
-Or you can create them on the spot, passing the player to the callback:
+或者，你也可以即时创建对话框，并将玩家传递给回调函数：
 
 ```wurst
 function showBox(player p)
 	let tempBox = new DialogBox(SOME_DYNAMIC_STRING)
-	tempBox.addButton("OK") ->
-		Log.info(p.getName() " as accepted.")
+	tempBox.addButton("好的") ->
+		Log.info(p.getName() " 已接受。")
 		destroy tempBox
 	tempBox.display(p, false)
 ```

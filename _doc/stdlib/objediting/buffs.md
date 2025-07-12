@@ -1,19 +1,19 @@
 ---
-title: Creating buff object data
+title: 创建增益效果对象数据
 sections:
-- Intro
-- Regular Buff Editing
-- Dummy Tornado Buffs
+- 简介
+- 常规增益效果编辑
+- 虚拟龙卷风增益效果
 ---
 
-### Intro
+### 简介
 
-In Warcraft III buffs are negative or positive status effects on units.
-However they are often only the visual part of an ability that the unit posesses.
+在《魔兽争霸 III》中，增益效果（buff）是单位身上的负面或正面状态效果。
+然而，它们通常只是单位所拥有的某个技能的视觉表现部分。
 
-### Regular Buff Editing
+### 常规增益效果编辑
 
-To generate a regular buff just use `BuffDefinition` and pass the id of the buff you want to use as source.
+要生成一个常规的增益效果，只需使用 `BuffDefinition` 并传入你想用作来源的增益效果的 ID。
 
 ```wurst
 public constant MY_BUFF_ID = compiletime(BUFF_ID_GEN.next())
@@ -26,12 +26,12 @@ public constant MY_BUFF_ID = compiletime(BUFF_ID_GEN.next())
 		..setIcon(Icons.bTNAcorn)
 ```
 
-### Dummy Tornado Buffs
+### 虚拟龙卷风增益效果
 
-When dealing with buffs we usually want to generate them for custom abilities without any side effects.
-To do exactly that, we use the `createDummyBuffObject` functions.
-These functions will generate an ability and a buff which you can apply by adding the ability to a unit.
-They return a tuple containing both of those ids.
+在处理增益效果时，我们通常希望为自定义技能生成它们，并且不产生任何副作用。
+要实现这一点，我们使用 `createDummyBuffObject` 函数。
+这些函数会生成一个技能和一个增益效果，你可以通过将该技能添加给单位来应用这个增益效果。
+它们会返回一个包含这两个 ID 的元组。
 
 ```wurst
 let MY_BUFF = compiletime(createDummyBuffObject("My Buff", "This unit is buffed", Icons.btnAcorn))
@@ -42,4 +42,3 @@ function add()
 function remove()
 	GetTriggerUnit().removeAbility(MY_BUFF.abilId)
 ```
-

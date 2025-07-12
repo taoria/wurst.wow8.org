@@ -1,85 +1,80 @@
 ---
-title: Manual
+title: 手册
 ---
 
 
-# Other Stuff
+# 其他事项
 
-## Stacktraces
+## 堆栈追踪
 
-You can enable with the commandline switch `-stacktraces`. Each error will then be displayed with a stacktrace showing
-the line number and filename of each function-call leading to the error. Errors
-must be generated with the magic function `function error(string msg)`.
+你可以通过命令行开关 `-stacktraces` 来启用它。启用后，每个错误都将显示一个堆栈追踪，其中包含导致错误的每个函数调用的行号和文件名。错误必须通过魔术函数 `function error(string msg)` 来生成。
 
-# Standard Library
+# 标准库
 
-Wurst comes with a library of some useful standard functions
-You can find the generated HotDoc pages here: [The Wurstscript Standardlibrary](https://peeeq.de/hudson/job/Wurst/HotDoc_Standard_Library_Documentation/index.html)
-However, the best way to learn about the library is still to look at the source code.
+Wurst 自带一个包含一些实用标准函数的库。
+你可以在这里找到生成的 HotDoc 页面：[Wurstscript 标准库](https://peeeq.de/hudson/job/Wurst/HotDoc_Standard_Library_Documentation/index.html)
+然而，学习该库的最佳方式仍然是查看源代码。
 
-# Wurst Style
+# 代码风格规范
 
-In this section we describe some style guidelines which you should follow when programming in Wurst.
+本节将详细介绍Wurst编程时应遵循的最佳实践：
 
-## Rule 1: Write for readability
+## 规范一：可读性优先
 
-You should always write your code so that it can be read easily. Ideally your code should be readable like normal English text.
-Use suitable names for functions and variables to make your code sound like normal text.
+代码应具备良好的可读性，使其他开发者能够轻松理解逻辑流程。理想情况下，你的代码应该像普通的英文文本一样易于阅读。
+为函数和变量使用合适的名称，使你的代码读起来像自然文本。
 
-- Create functions which help you to express your intend on a higher level of abstraction.
-- When a function or variable has type boolean, name it like a question. The name should sound natural when used inside an if statement.
-- Use class functions and extension methods to make code readable from left to right.
+- 创建函数，帮助你在更高的抽象层次上表达意图。
+- 当函数或变量的类型为布尔值时，像提问一样命名它。这个名称在 `if` 语句中使用时应该听起来很自然。
+- 使用类函数和扩展方法，使代码可以从左到右阅读。
 
 
-Example:
+示例：
 
-    // not so readable:
+    // 不太易读：
     if GetUnitState(h, UNIT_STATE_LIFE) <= 0.405
         let t = NewTimer()
         t.setData(...)
         t.start(...)
         ...
 
-    // better:
+    // 更好：
     if hero.isDead()
         hero.reviveAt(town, REVIVE_TIME)
 
-    // that timer stuff is in a different small function
+    // 计时器的相关逻辑放在另一个小函数里
 
 
-### Rule 1.1 Document your Code
-### Rule 1.2 Keep functions short
-### Rule 1.3 The Golden Path
+### 规则 1.1 为你的代码编写文档
+### 规则 1.2 保持函数简短
+### 规则 1.3 黄金路径
 
 
 
 
-## Rule 2: Write checkable code
+## 规则 2：编写可检查的代码
 
-Your code should be checkable by the compiler. The Wurst compiler provides you with some powerful typechecking tools. Use
-them wisely to reduce the mistakes you can do in your program. You might also want to watch [this awesome talk by Yaron Minsky](https://vimeo.com/14313378) who summarizes it pretty nicely: "make invalid state unrepresentable". Of course Wurst is not as sophisticated as ML
-but there are still a lot of things you can do.
+你的代码应该能被编译器检查。Wurst 编译器为你提供了一些强大的类型检查工具。明智地使用它们，以减少你在程序中可能犯的错误。你可能还想观看 [Yaron Minsky 的精彩演讲](https://vimeo.com/14313378)，他对此总结得很好：“让无效状态无法表示”。当然，Wurst 不像 ML 那样复杂，但你仍然可以做很多事情。
 
-- avoid the castTo expression whenever possible
-- use high level libraries like HashMap instead of lower level libraries like Table or even then hashtable natives
-- use tuple types to give meaning to values (see Vector for an example)
-- use enums with switch statements
+- 尽可能避免使用 `castTo` 表达式
+- 使用像 `HashMap` 这样的高级库，而不是像 `Table` 甚至 `hashtable` 原生函数这样的低级库
+- 使用元组类型为值赋予意义（参见 `Vector` 示例）
+- 将枚举与 `switch` 语句结合使用
 
-## Rule 3: DRY: Don't repeat yourself
+## 规则 3：DRY：不要重复自己
 
-When you find the same lines of code at several places of your project, try to put the common code into a function, class or module.
+当你在项目的多个地方发现相同的代码行时，尝试将通用代码放入函数、类或模块中。
 
-## Rule 4: KISS: Keep it simple, stupid!
+## 规则 4：KISS：保持简单，傻瓜！
 
-Always try to choose the most simple solution to your problem. Avoid premature optimization.
+总是尝试为你的问题选择最简单的解决方案。避免过早优化。
 
 
-## Rule 5: Use Object oriented programming
+## 规则 5：使用面向对象编程
 
-### Avoid instanceof
+### 避免使用 instanceof
 
-Using *instanceof* is usually a sign for bad use of object orientation. Often instanceof checks can
-be replaced by using dynamic dispatch. Let's look at an example:
+使用 *instanceof* 通常是面向对象使用不当的标志。通常，`instanceof` 检查可以通过使用动态分派来替代。让我们看一个例子：
 
     if shape instanceof Circle
         Circle c = shape castTo Circle
@@ -88,28 +83,24 @@ be replaced by using dynamic dispatch. Let's look at an example:
         Rect r = shape castTo Rect
         area = r.width * r.height
 
-It would be better to have one area function in Shape and then implement it for Circle and Rect.
-That way you can just write:
+更好的做法是在 `Shape` 中定义一个 `area` 函数，然后在 `Circle` 和 `Rect` 中分别实现它。这样你就可以直接写：
 
     area = shape.area()
 
-The right area method will then be automatically selected based on the type of shape.
+然后，正确的 `area` 方法将根据 `shape` 的类型自动被选择。
 
 
-## Using Wurst with legacy maps
+## 在旧地图中使用 Wurst
 
-The Wurstpack World Editor will compile and link your wurst packages into your map even if that map already has GUI/jass/vJass - Wurst will run in parallel to that.
+Wurstpack World Editor 会将你的 Wurst 包编译并链接到你的地图中，即使该地图已经包含 GUI/Jass/vJass——Wurst 将与它们并行运行。
 
-For the more adventurous, Wurst also has a jass-like dialect called Jurst, and supports automatic extraction of vJass to Jurst.
-This feature should be treated as beta.
+对于更具冒险精神的用户，Wurst 还有一个类似 Jass 的方言，名为 Jurst，并支持将 vJass 自动提取为 Jurst。此功能应被视为测试版。
 
 ### Jurst
 
-Jurst is a dialect of Wurst, which has the same features as Wurst, but with a Syntax similar to vJass.
-You can use Jurst to adapt vJass code, but there are still a few manual steps involved, because of the difference in supported features.
+Jurst 是 Wurst 的一种方言，它具有与 Wurst 相同的功能，但语法类似于 vJass。你可以使用 Jurst 来适配 vJass 代码，但由于支持的功能存在差异，仍然需要一些手动步骤。
 
-In general, Jurst is less strict than Wurst.
-The following code fragments are each valid Jurst:
+总的来说，Jurst 不如 Wurst 严格。以下代码片段都是有效的 Jurst 代码：
 
     library LooksLikeVjass initializer ini
         private function ini takes nothing returns nothing
@@ -118,7 +109,7 @@ The following code fragments are each valid Jurst:
         endfunction
     endlibrary
 
-and
+和
 
     package NearlyTheSameAsWurst
         function act()
@@ -130,80 +121,62 @@ and
                            ..addAction(function act)
         end
 
-    // Note: "end" intentionally not present here.
+    // 注意：此处故意没有 "end"。
 
-As you can see, Jurst is able to access wurst code including packages from the wurst standard library, such as `print`.
-However, you should not try to access Jurst (or jass/vjass) code from Wurst packages.
+如你所见，Jurst 能够访问 Wurst 代码，包括来自 Wurst 标准库的包，例如 `print`。但是，你不应该尝试从 Wurst 包中访问 Jurst（或 Jass/vJass）代码。
 
-The especially keen can read the [Jurst Language Definition](https://github.com/wurstscript/WurstScript/blob/master/de.peeeq.wurstscript/parserspec/Jurst.g4) for an exact reference of legal Jurst.
+特别感兴趣的用户可以阅读 [Jurst 语言定义](https://github.com/wurstscript/WurstScript/blob/master/de.peeeq.wurstscript/parserspec/Jurst.g4) 以获取合法的 Jurst 语法的精确参考。
 
-### Automatic Extraction of vJass to Jurst
+### 自动将 vJass 提取为 Jurst
 
-One useful way of working with legacy maps is by extracting existing vJass to Jurst automatically.
-In Eclipse, you can right-click on a map and export all the custom text triggers into Jurst files.
-The files will be stored in the `wurst/exported/` folder.
+处理旧地图的一种有用方法是自动将现有的 vJass 提取为 Jurst。在 Eclipse 中，你可以右键单击地图，并将所有自定义文本触发器导出为 Jurst 文件。这些文件将存储在 `wurst/exported/` 文件夹中。
 
-![Extract to Files](/assets/images/extractToFiles.png)
 
-After doing this you'll want to manually delete the members in the trigger editor.
-Be warned that the extract-to-files feature is likely to produce at least some files with syntax errors, so be sure to back up your map before proceeding.
+![提取到文件](/assets/images/extractToFiles.png)
 
-# Optimizer
 
-The Wurstcompiler has a set of build-in scriptoptimizing tools which will, when enabled, optimize the generated Jass code in various ways.
-Jass optimization got very important to provide playable framerates when using very enhanced and complex systems.
-On the one hand the optimizer cleans the code, making it smaller in size and removing useless stuff in order to reduce RAM-usage.
-On the other hand it also offers some optimizations to increase the speed of execution and performance of the code.
+完成此操作后，你需要在触发器编辑器中手动删除这些成员。请注意，提取到文件的功能可能会产生一些带有语法错误的文件，因此在继续操作前请务必备份你的地图。
 
-## Cleaning
+# 优化器
 
-Stuff that is being removed, changed or not even printed
+Wurst 编译器内置了一套脚本优化工具，启用后，会以多种方式优化生成的 Jass 代码。在使用非常增强和复杂的系统时，Jass 优化对于提供可玩的游戏帧率变得非常重要。一方面，优化器会清理代码，减小其体积并移除无用内容，以减少 RAM 使用量。另一方面，它也提供一些优化来提高代码的执行速度和性能。
 
-* Comments
-* Unneeded White-spaces
-* Excessive parentheses
-* Some useless Jassconstants replaced with "null"
+## 清理
 
-## Name compression
+被移除、更改或甚至不被打印的内容
 
-Smaller names execute faster and take less space, so all names of functions and variables are compressed to the shortest name possible.
+*   注释
+*   不必要的空格
+*   多余的括号
+*   一些无用的 Jass 常量被替换为 "null"
 
-## Inlining
+## 名称压缩
 
-Inlining is not an easy task, but brings great performance boosts to systems which use many different functions.
-It also makes coding easier and more readable, because you don't have to care about the performance loss
-when splitting stuff into too many functions.
-Also blizzard.j functions, such as BJs and Swaps, can get inlined.
+较短的名称执行更快且占用更少的空间，因此所有函数和变量的名称都会被压缩到可能的最短名称。
 
-In the current implementation, a function can be inlined when it has only one exit-point.
-This is the case, when there is no return statement or when the only return statement is at the end of a function.
+## 内联
 
-Whether a function actually gets inlined depends on some heuristics in the compiler.
-The heuristic tries to balance execution speed and size of the mapscript, as inlining usually makes the code longer but faster.
-A function is more likely to get inlined, when it is short.
-A function is less likely to get inlined, when it is called in many different places.
-It is best to not rely on more guarantees about the inliner, as the heuristics are changed from time to time.
+内联不是一项简单的任务，但它能为使用许多不同函数的系统带来巨大的性能提升。它还使编码更容易、更具可读性，因为你不必担心将内容拆分到太多函数中会带来的性能损失。此外，blizzard.j 中的函数，如 BJ 和 Swap，也可以被内联。
 
-Global variables that have a constant value get inlined as well as constant locals.
+在当前的实现中，当一个函数只有一个退出点时，它可以被内联。这种情况发生在函数没有 `return` 语句，或者唯一的 `return` 语句位于函数末尾时。
 
-## Constant Folding and Constant propagation
+一个函数是否真的被内联取决于编译器中的一些启发式算法。该算法试图在执行速度和地图脚本大小之间取得平衡，因为内联通常会使代码变长但运行更快。一个函数越短，就越有可能被内联。一个函数在许多不同地方被调用，就越不可能被内联。最好不要依赖于关于内联器的更多保证，因为启发式算法会时常改变。
 
-Expressions containing only constants are calculated at compiletime.
-Ifs with constant conditions are removed.
-Both mechanics work together to remove unneeded and unreachable code.
+具有常量值的全局变量以及常量局部变量也会被内联。
 
-# Errors and Warnings
+## 常量折叠与常量传播
 
-Wurst provides some errors and warnings to help finding bugs early in the development process.
-In this chapter some of these errors and warnings are explained, as well as some ways to fix them.
+只包含常量的表达式在编译时计算。带有常量条件的 `if` 语句会被移除。这两种机制协同工作，以移除不必要和不可达的代码。
 
-## Warnings
+# 错误与警告
 
-* The assignment to local variable x is never read
+Wurst 提供一些错误和警告，以帮助在开发过程的早期发现错误。本章将解释其中一些错误和警告，以及一些修复它们的方法。
 
-    This warning means that a value used in an assignment is never read in all possible executions.
-    This often means that you forgot to use it, so it probably is a bug you have to fix.
-    Sometimes it is just some unnecessary code as in the following example:
+## 警告
+
+*   对局部变量 x 的赋值从未被读取
+
+    这个警告意味着在所有可能的执行路径中，赋值中使用的值从未被读取。这通常意味着你忘记使用它了，所以这可能是一个需要修复的错误。有时它只是一些不必要的代码，如下例所示：
 
         int x = 0
         if someCondition
@@ -212,7 +185,7 @@ In this chapter some of these errors and warnings are explained, as well as some
             x = 3
         print(x.toString())
 
-    The fix for this warning is straight forward in this case, just remove the unused value:
+    在这种情况下，修复这个警告很简单，只需移除未使用的值：
 
         int x
         if someCondition
@@ -222,31 +195,28 @@ In this chapter some of these errors and warnings are explained, as well as some
         print(x.toString())
 
 
-* The variable x is never read.
+*   变量 x 从未被读取。
 
-    Usually this warning also means that you have some unnecessary code or that you forgot to use something.
-    In some rare cases you need to give a parameter but do not want to use it.
-    In these cases you can **suppress the warning** by starting the variable name with an underscore:
+    通常这个警告也意味着你有一些不必要的代码，或者你忘记了使用某些东西。在极少数情况下，你需要传递一个参数但不想使用它。在这些情况下，你可以通过在变量名前加上下划线来**抑制该警告**：
 
         function foo(int _x)
             return 5
 
-* The assignment to ... probably has no effect
+*   对 ... 的赋值可能没有效果
 
-    This warning usually appears with assignments like the following:
+    这个警告通常出现在类似以下的赋值中：
 
         construct(int emeny)
             this.enemy = enemy
 
-    Note that there is a typo in the parameter which causes the assignment to be wrong.
+    注意，参数中有一个拼写错误，导致赋值错误。
 
-* The import .... is never used directly.
+*   导入的 ... 从未被直接使用。
 
-    Usually this means that you are importing a package and never using it, so that you can remove the import.
-    There are some corner cases like implicit generic conversions, which are not detected correctly at the moment.
+    这通常意味着你导入了一个包但从未使用它，所以你可以移除该导入。存在一些边缘情况，比如隐式泛型转换，目前无法正确检测。
 
-Some warnings are just there to ensure some common coding standards in Wurst:
+有些警告只是为了确保 Wurst 中的一些通用编码标准：
 
-* Function names should start with an lower case character.
-* Variable names should start with a lower case character.
-* Type names should start with upper case characters.
+*   函数名应以小写字母开头。
+*   变量名应以小写字母开头。
+*   类型名应以大写字母开头。

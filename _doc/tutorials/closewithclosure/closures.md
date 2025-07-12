@@ -95,8 +95,6 @@ class MyCalculator implements Calculator
 ## 跨域传递数据
 
 你通常会想着把外部的数据传递给匿名函数,一个比较常规的例子是延迟执行代码。
-Often you want to pass data from the outside into the anonymous function.
-A common example for this is the delayed execution of code.
 
 比方说你想创建一个类似地狱火的技能,先表演一段彗星从天而降的动画.当然,伤害以及其他的潜在事件必须得发生在一段时间之后————在彗星的特效撞击地标之后.在vjass中你或许会使用类似于TimerUtils以及一个数据结构来做到这一点.
 
@@ -125,7 +123,7 @@ endfunction
 如果你有好几年的jass编程经验,这对于你来说也许已经司空见惯了,不过这段代码会产生一些问题.
 首先是牵涉了开发者大量的手动工作,因此更容易犯错.其流程也是反直觉的自底向上.而Wurst可以替你做这些事情.
 
-使用`CLosureTimers`,例子如下.
+使用`ClosureTimers`,例子如下.
 
 
 ```wurst
@@ -138,7 +136,7 @@ function onSpell()
         flashEffect("xxx", target)
 ```
 在这个场景的背后,wurst做了和你自己在vjass中做得一模一样的事情.创建一个类,实例化它,将它绑定在计时器上,只是这儿用了Wurst版本的`TimerUtils`.在wurst的包中可以看到这是如何实现的.
-.
+
 ## 在变量中保存闭包
 正如你在`IntGenerator`中看到的,闭包类型可以轻松的保存在变量,类和哈希表中.常见的使用情景是在周期性的计时器或者临时事件的回调中,你想要在它的回调函数中去销毁它.一个简单的例子是在10秒内单位死亡则召唤生物中:
 
@@ -154,7 +152,6 @@ function spellEffect()
         destroy listener
 ```
 如你所见我们在一个变量中保存了`EventListener.add` 返回的监听器,以在10秒后销毁它.
-原文：As you can see we save the listener returned by `EventListener.add` in a variable to destroy it after 10 seconds.
 
 记住闭包不会被自动的回收,除非底层系统替你做了.标准库会销毁计划中为临时性的闭包.
 ## 代替触发器Action
@@ -196,5 +193,4 @@ init
 
 ## 结语
 
-我们希望该教程能帮助你更进一步理解这一高级话题.来看看[manual section](https://wurstlang.org/manual.html#lambdas-and-closures) 获取更多信息吧.
-
+我们希望该教程能帮助你更进一步理解这一高级话题。来看看[手册章节](https://wurstlang.org/manual.html#lambdas-and-closures) 获取更多信息吧。

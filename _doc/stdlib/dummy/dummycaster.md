@@ -1,23 +1,23 @@
 ---
-title: Dummy Casting
+title: 虚拟施法
 sections:
-- Intro
-- Making dummy spells
-- Casting instant spells
-- Casting delayed spells
+- 简介
+- 制作虚拟技能
+- 施放瞬发技能
+- 施放延迟技能
 ---
 
-### Intro
+### 简介
 
-Dummy casters are commonly used in custom spells to cast abilities dynamically onto targets or points.
-For example hexing all units in an AoE, or impaling in multiple directions.
+虚拟施法单位通常用于自定义技能中，以动态地对目标或点施放技能。
+例如，对一个范围效果（AoE）内的所有单位施放妖术，或向多个方向施放穿刺。
 
-### Making dummy spells
+### 制作虚拟技能
 
-Since a regular unit will be used to dummy cast abilities, the passed abilities must have special properties.
-Namely no cooldown, no manacost, high cast range, no dependencies and not being a hero spell.
-The easy way to achieve this is to use `.setDummyAbility()` (recent addition, make sure your stdlib is up2date).
-Then set spell dependent values like duration. Take a look at this polymorph example:
+由于将使用一个常规单位来虚拟施放技能，因此传递的技能必须具有特殊属性。
+即无冷却时间、无魔法消耗、高施法距离、无依赖项且不是英雄技能。
+实现这一点的简单方法是使用 `.setDummyAbility()`（最近新增的功能，请确保您的 stdlib 是最新的）。
+然后设置与技能相关的数值，如持续时间。请看下面这个变形术的例子：
 
 ```wurst
 constant POLY_DUMMY_ID = compiletime(ABIL_ID_GEN.next())
@@ -29,10 +29,10 @@ constant POLY_DUMMY_ID = compiletime(ABIL_ID_GEN.next())
 ```
 
 
-### Casting instant spells
+### 施放瞬发技能
 
-For spells that aren't channel or impale, which only deal instant or no damage and have no effects attached to the caster, you should use `InstantDummyCaster`.
-It will use only one unit to cast all spells. Take a look at this example with the polymorph dummy from above, which works because it is instant:
+对于非持续施法或穿刺类技能，即那些只造成瞬时伤害或无伤害，并且没有附加于施法者身上的效果的技能，您应该使用 `InstantDummyCaster`。
+它将只使用一个单位来施放所有技能。请看下面这个使用上述变形术虚拟技能的例子，它之所以能正常工作，是因为它是瞬发的：
 
 ```wurst
 import InstantDummyCaster
@@ -40,12 +40,12 @@ import InstantDummyCaster
 InstantDummyCaster.castTarget(DUMMY_PLAYER, POLY_DUMMY_ID, 1, OrderIds.polymorph, target)
 ```
 
-### Casting delayed spells
+### 施放延迟技能
 
-Channeled spells, impale, or any that do damage after the cast has occured, should be cast with a `DummyCaster` object which will stay for a while.
-Therefore damage will be dealt from the correct player and effects attached to the caster such as chainlightning will stay intact.
-Adjust the delay parameter according to your spell's duration. You can cast multiple spells with one object, as long as they all happen before the last spell's delay time expires. `BLIZZARD_DUMMY_ID` refers to a blizzard dummy spell created equally to the polymorph one above.
-Never destroy `DummyCaster` instances manually and allocate them on the spot.
+持续施法技能、穿刺，或任何在施法发生后造成伤害的技能，都应该使用一个会存留一段时间的 `DummyCaster` 对象来施放。
+这样，伤害将由正确的玩家造成，并且附加在施法者身上的效果（如连锁闪电）将保持完整。
+根据您技能的持续时间调整延迟参数。您可以使用一个对象施放多个技能，只要它们都在最后一个技能的延迟时间到期前发生即可。`BLIZZARD_DUMMY_ID` 指的是一个与上述变形术虚拟技能同样方式创建的暴风雪虚拟技能。
+切勿手动销毁 `DummyCaster` 实例，应在使用时即时分配它们。
 
 ```wurst
 // Casts blizzard 4 times in cross formation around target point
@@ -58,9 +58,9 @@ new DummyCaster(casterPos)
 	..castPoint(BLIZZARD_DUMMY_ID, 1, OrderIds.blizzard, target + vec2(0, -128))
 ```
 
-### Applying orb effects
+### 应用法球效果
 
-Using `DummyCaster`, you can also apply orb effects, like frost attack or poison attack, to a target unit. You should use the `attackonce` order.
+使用 `DummyCaster`，您还可以对目标单位应用法球效果，例如霜冻攻击或毒性攻击。您应该使用 `attackonce` 命令。
 
 ```wurst
 // Poisons target unit

@@ -1,22 +1,22 @@
 ---
-title: Creating ability object data
+title: 创建技能对象数据
 sections:
-- Intro
-- Normal Spells
-- Level dependent values
-- Channel Spells
-- Tooltip Generation
+- 简介
+- 普通法术
+- 依赖等级的数值
+- 持续施法类法术
+- 提示信息生成
 ---
 
-### Intro
+### 简介
 
-In Warcraft III most abilities, unlike units, are unique and thus the parent ability must be specified to gain access to custom data fields.
-The standard library wraps this nicely by providing classes for each unique spell in `AbilityObjEditing` and presets for channel based custom spells `ChannelAbilityPreset`.
+在《魔兽争霸III》中，大多数技能与单位不同，是唯一的，因此必须指定父技能才能访问自定义数据字段。
+标准库通过在 `AbilityObjEditing` 中为每个独特法术提供类，以及为基于持续施法的自定义法术提供预设 `ChannelAbilityPreset`，很好地封装了这一过程。
 
-### Normal Spells
+### 普通法术
 
-To generate and modify normal spells, use the correspoding class from `AbilityObjEditing`.
-E.g. if you want to generate a fireball ability, use `AbilityDefinitionFireBolt` or `AbilityDefinitionPaladinDivineShield` for divine shield.
+要生成和修改普通法术，请使用 `AbilityObjEditing` 中相应的类。
+例如，如果你想生成一个火球术技能，请使用 `AbilityDefinitionFireBolt`；如果是圣盾术，则使用 `AbilityDefinitionPaladinDivineShield`。
 
 
 ```wurst
@@ -29,11 +29,11 @@ public constant FIREBOLT_ID = compiletime(ABIL_ID_GEN.next())
 		..presetDamage(lvl -> 100. * lvl)
 ```
 
-#### Level dependent values
+#### 依赖等级的数值
 
-Another specialty of abilities is that they have multiple levels, which allow some fields to have different values depending on the level.
-In the example above we used `lvl -> 100. * lvl` to atuomatically fill levels based on a simple calculation.
-Essentially it is the same as writing the following lines:
+技能的另一个特点是它们有多个等级，这使得某些字段可以根据等级拥有不同的值。
+在上面的例子中，我们使用 `lvl -> 100. * lvl` 来根据一个简单的计算自动填充等级数据。
+这本质上与编写以下几行代码是相同的：
 
 ```wurst
 	..setDamage(1, 100.)
@@ -41,15 +41,15 @@ Essentially it is the same as writing the following lines:
 	..setDamage(3, 300.)
 ```
 
-But in a more condensed form, and one which automatically adapts if you change the amount of levels the spell has.
+但这是一种更简洁的形式，并且当您更改法术的等级数量时，它会自动适应。
 
-### Channel Spells
+### 持续施法类法术
 
-Most custom spells are based on channel. It is a very customizable ability without an effect made exactly for this purpose.
-By default channel spells emit some odd behaviour, like being invisible and having to "channel" the spell for a duration of time, like Blizzard or Fire Rain.
-You can reset all these properties by passing `true` as last argument in the constructor.
+大多数自定义法术都基于“持续施法（Channel）”。这是一个专为此目的而设计的、没有默认效果且高度可定制的技能。
+默认情况下，持续施法类法术会表现出一些奇怪的行为，比如技能效果不可见，并且需要像暴风雪或火焰雨那样“引导”法术一段时间。
+您可以通过在构造函数中传递 `true` 作为最后一个参数来重置所有这些属性。
 
-Take a look at this example jump spell:
+看一下这个跳跃法术的例子：
 
 ```wurst
 public constant JUMP_ID = compiletime(ABIL_ID_GEN.next())
@@ -67,11 +67,13 @@ public constant JUMP_ID = compiletime(ABIL_ID_GEN.next())
 	..presetIcon(Icons.bTNBootsOfSpeed)
 ```
 
-### Tooltip Generation
+### 提示信息生成
 
-The standard library provides an interface to listen to each data field that has been set on an ability definition. Using a snippet like [Ability-Tooltip-Generator](https://github.com/Frotty/Ability-Tooltip-Generator) you can easily generate tooltips.
+标准库提供了一个接口，用于监听技能定义上设置的每个数据字段。使用像 [Ability-Tooltip-Generator](https://github.com/Frotty/Ability-Tooltip-Generator) 这样的代码片段，您可以轻松地生成提示信息。
 
-![](/assets/images/stdlib/tooltipgen.png){: .img-responsive}
+
+![](/assets/images/stdlib/tooltipgen.png)
+{: .img-responsive}
 
 ```wurst
 	let tgen = new AbilityTooltipGenerator("An ordinary snowball.")

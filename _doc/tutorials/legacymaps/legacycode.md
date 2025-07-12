@@ -38,10 +38,12 @@ sections:
 
 并把它放置在你项目下的 **wurst/** 文件夹中。
 
-![](/assets/images/legacy/war3map.j.png){: .img-responsive .img-rounded}
+
+![](/assets/images/legacy/war3map.j.png){: .img-responsive .img-rounded} 
 
 这些文件和所有的J文件一样,__不会被自动的核对更新__.这意味着Wurst会使用一个缓存的版本,而不是去考虑检测错误亦或者改变什么,除非你通过`F1 -> clean`清空工作空间。
 所以,如果你改动了war3map.j,并且希望这些改动能作用于地图,你必须在你的wurst_run.args文件添加运行参数 **-noExtractMapScript**,这样能阻止从地图中导出脚本,并使用在wurst文件夹内所提供的war3map.j.
+
 
 ![](/assets/images/legacy/uselegacycode.png){: .img-responsive .img-rounded}
 
@@ -82,4 +84,3 @@ package NearlyTheSameAsWurst
 比如print之类的.
 
 > 不过,在Wurst包内,你无法访问Jurst代码
-

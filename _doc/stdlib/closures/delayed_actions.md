@@ -8,38 +8,37 @@ sections:
 
 ### 导入
 
-这个 `ClosureTimers.wurst`包,他使用Wurst闭包封装了一系列War3的计时器的机制.利用这些闭包,你可以跨域传递数据,或是将回调函数存储在某个变量中
+`ClosureTimers.wurst` 包使用 Wurst 的闭包为 Warcraft 3 的计时器机制提供了封装。通过闭包，您可以跨作用域传递数据或将回调存储在变量中。
 
-
-> 尽管闭包计时器能够处理大多问题, 但在性能吃紧的情况下, TimedLoop模块能够表现出更好的结果.
+> 尽管闭包计时器在大多数情况下都表现出色，但在对性能要求严格的情况下，`TimedLoop` 模块可以提供更好的性能。
 
 ### 延时动作
 
-计时器最经常被用于在一定时间后执行某些事情,而无需停止其他代码的执行的情景中.你可以使用`doAfter()`函数来做到这一点.
+计时器最常见的用例是在一定时间后执行某个操作，而不阻塞其他代码的执行。您可以使用 `doAfter()` 函数来实现此目的。
 
-一些例子是:
+示例如下：
 
 ```wurst
-// Destroy effect after 5 seconds
+// 5秒后销毁特效
 let eff = addEffect(Abilities.vengeanceMissile, ZERO2)
 doAfter(5.) ->
 	eff.destr()
 
-// Inflict damage after time
+// 一段时间后造成伤害
 let attacker = GetEventDamageSource()
 let target = GetTriggerUnit()
 doAfter(2.) ->
 	attacker.damageTarget(target, 20)
 ```
-和vJass的计时器数据绑定比较一下你会立刻注意到,这些闭包的数据绑定是自动.
+与 vJass 的计时器附件相比，您会立即注意到闭包的数据绑定是自动的。
 
-在创建的时候,闭包会去捕获它内部的数据,在这个例子里.分别是`eff`和`attacker,target`.你可以在之后的回调中引用他们
+闭包在创建时会捕获其内部的数据，在本例中是 `eff`、`attacker` 和 `target`。之后您可以在回调中引用它们。
 
-在底层,闭包计时器也使用`TimerUtils`来实现数据绑定
+在底层，闭包计时器也使用 `TimerUtils` 来实现数据绑定。
 
 ### 周期动作
 
-另一个典型的用例是周期的执行某些特定的动作,这个情况请使用`doPeriodically()` 或 `doPeriodicallyCounted`.
+另一个典型的用例是周期性地执行某个动作。为此，请使用 `doPeriodically()` 或 `doPeriodicallyCounted`。
 
 ```wurst
 doPeriodically(ANIMATION_PERIOD) cb ->
@@ -49,11 +48,11 @@ doPeriodically(ANIMATION_PERIOD) cb ->
 		for missile in missiles
 			missile.update()
 
-// 计时
+// 倒计时
 doPeriodicallyCounted(1, 3) cb ->
 	print(cb.getCount().toString() + "..")
 ```
-你看,在这个变体,回调接收一个闭包对象作为参数.所以你可以销毁或者修改它.你也可以将这个回调保存在变量中,然后比方说,在相关联的单位死亡后销毁它.
+如您所见，在此变体中，回调会接收闭包对象作为参数。这使您可以销毁或修改它。您还可以将回调存储在变量中，并在例如关联单位死亡时销毁它。
 
 ```wurst
 class MyClass
@@ -68,4 +67,3 @@ class MyClass
 	ondestroy
 		destroy cb
 ```
-

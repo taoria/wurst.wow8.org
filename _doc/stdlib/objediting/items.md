@@ -1,15 +1,15 @@
 ---
-title: Creating item object data
+title: 创建物品对象数据
 sections:
-- Intro
-- Example
+- 简介
+- 示例
 ---
 
-### Intro
+### 简介
 
-Use `ItemDefinition` from the `ItemObjEditing` package to generate item objects.
+使用 `ItemObjEditing` 包中的 `ItemDefinition` 来生成物品对象。
 
-### Example
+### 示例
 
 ```wurst
 public constant BALL_ITEM_ID = compiletime(ITEM_ID_GEN.next())
@@ -23,4 +23,3 @@ public constant BALL_ITEM_ID = compiletime(ITEM_ID_GEN.next())
 	..setTooltipBasic("Do eet")..setModelUsed(Abilities.ancientProtectorMissile)
 	..setInterfaceIcon(Icons.bTNGolemStormBolt)
 ```
-

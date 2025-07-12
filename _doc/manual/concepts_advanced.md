@@ -15,11 +15,11 @@ sections:
 
 ## 枚举
 
-In Wurst, __Enums__ are a shorthand wrapper for collections of named integer constants.
-Enums are not related to classes and are directly translated into the integers they represent.
-The main purpose is to add safe, comfortable API in places where otherwise ints would be used.
+在 Wurst 中，__枚举 (Enums)__ 是一组命名整数常量的简写包装器。
+枚举与类无关，并直接转换为它们所代表的整数。
+其主要目的是在通常会使用整数的地方添加安全、舒适的 API。
 
-Usage is similar to static class members via the Enum's name:
+用法类似于通过枚举名称访问静态类成员：
 
 ```wurst
 enum MyUnitState
@@ -30,7 +30,7 @@ enum MyUnitState
 let currentState = MyUnitState.GROUND
 ```
 
-Enums can be used as class members
+枚举可以用作类成员
 
 ```wurst
 class C
@@ -40,8 +40,8 @@ class C
 		currentState = state
 ```
 
-To check the current value of an enum, you can use the switch statement.
-Note that all Enummembers have to be checked (or a defaut).
+要检查枚举的当前值，你可以使用 switch 语句。
+请注意，必须检查所有枚举成员（或使用 default）。
 
 ```wurst
 let currentState = MyUnitState.GROUND
@@ -53,26 +53,26 @@ switch currentState
 	case WATER
 		print("water")
 ```
-Note that in switch statements and variable assignments the qualifier `MyUnitState` can be ommited.
+请注意，在 switch 语句和变量赋值中，限定符 `MyUnitState` 可以省略。
 
-To retrieve the int an enum member represents, simply cast it to the int type:
+要获取枚举成员所代表的整数，只需将其转换为 int 类型：
 
 ```wurst
-print((MyUnitState.GROUND castTo int).toString()) // Will print "1"
+print((MyUnitState.GROUND castTo int).toString()) // 将打印 "1"
 ```
 
-The coalescent integer value starts at 0, incrementing with each succeeding enum member. So for `MyUnitState` `FLYING` will be 0, `GROUND` 1 and `WATER` 2.
+合并的整数值从 0 开始，每个后续的枚举成员递增。因此，对于 `MyUnitState`，`FLYING` 将是 0，`GROUND` 是 1，`WATER` 是 2。
 
 
 ## 元组类型
 
-With _tuple_ types you can group several variables into one bundle. This can be used to return more than one value from a function, to create custom types and of course for better readability.
+通过*元组*类型，你可以将多个变量组合成一个包。这可以用于从函数返回多个值、创建自定义类型，当然也可以提高可读性。
 
-Note that tuples are not like classes. There are some important differences:
-- You do not destroy tuple values.
-- When you assign a tuple to a different variable or pass it to a function you create a copy of the tuple. Changes to this copy will not affect the original tuple.
-- Tuple types cannot be bound to type parameters, so you can not have a List{vec} if vec is a tuple type.
-- As tuple types are not created on the heap you have no performance overhead compared to using single variables.
+请注意，元组不像类。它们有一些重要的区别：
+- 你不需要销毁元组值。
+- 当你将元组赋给另一个变量或将其传递给函数时，你会创建该元组的副本。对此副本的更改不会影响原始元组。
+- 元组类型不能绑定到类型参数，因此如果 vec 是元组类型，你就不能拥有 `List{vec}`。
+- 由于元组类型不是在堆上创建的，与使用单个变量相比，没有性能开销。
 
 ```wurst
 // Example 1:
@@ -103,31 +103,24 @@ init
 		testSuccess()
 ```
 
-Because tuples don't have any functions themselves, you can add extension
-functions to an existing tuple type in order to achieve class-like
-functionality.
-Remember that you can't modify the value of a tuple in it's extension function
-- so you have to return a new tuple every time if you wan't to change something.
-Look at the Vector package in the Standard Library for some tuple usage
-examples. (Math/Vectors.wurst)
+因为元组本身没有任何函数，你可以为现有的元组类型添加扩展函数，以实现类似类的功能。
+请记住，你不能在元组的扩展函数中修改其值——因此，如果你想更改某些内容，每次都必须返回一个新的元组。
+可以查看标准库中的 Vector 包以获取一些元组使用示例。(Math/Vectors.wurst)
 
 
 
 ## 拓展函数
 
-Extension functions enable you to "add" functions to existing types without
-creating a new derived type, recompiling, or otherwise modifying the original
-type.
-Extension functions are a special kind of static function, but they are called
-as if they were instance functions of the extended type.
+扩展函数使你能够向现有类型“添加”函数，而无需创建新的派生类型、重新编译或以其他方式修改原始类型。
+扩展函数是一种特殊的静态函数，但它们的调用方式就像它们是扩展类型的实例函数一样。
 
-### Declaration
+### 声明
 ```wurst
 public function TYPE.EXTFUNCTIONNAME(PARAMETERS) returns ...
 	BODY
 	// The keyword "this" inside the body refers to the instance of the extended type
 ```
-### Examples
+### 示例
 
 ```wurst
 // Declaration
@@ -158,10 +151,10 @@ public function vec2.lengthSquared returns real
 
 ## 不定参函数
 
-Variable argument functions can be passed an variable amount of parameters of the same type. They are most commonly used to prevent boilerplate code and provide better API.
-Inside the function, the variable arguments can be accessed via a `for .. in` loop.
+可变参数函数可以传递可变数量的同类型参数。它们最常用于防止样板代码并提供更好的 API。
+在函数内部，可以通过 `for .. in` 循环访问可变参数。
 
-Example:
+示例：
 ```wurst
 function asNumberList(vararg int numbers) returns LinkedList<int>
 	let list = new LinkedList<int>()
@@ -175,22 +168,20 @@ init
 	asNumberList(10)
 ```
 
-All the calls to `asNumberList` are valid in this example and the benefit is apparent. We can pass any amount of integers (up to 31 arguments) to the function, but we only need to implement it once.
+在此示例中，所有对 `asNumberList` 的调用都是有效的，其好处显而易见。我们可以向函数传递任意数量的整数（最多 31 个参数），但我们只需要实现一次。
 
-### Limitations
+### 限制
 
-The current implementation creates a specialized function with the right number of parameters.
-Since Jass allows at most 31 parameters, function calls must not use more than 31 arguments in total.
+当前的实现会创建一个具有正确参数数量的专用函数。
+由于 Jass 最多允许 31 个参数，因此函数调用总共不能使用超过 31 个参数。
 
 
 ## Lambdas和闭包
 
-A lambda expression (also called anonymous function) is a lightweight way to provide an implementation
-of a functional interface or abstract class (To keep the text simple, the following
-explanations are all referring to interfaces, but abstract classes can be used in the same way).
+Lambda 表达式（也称为匿名函数）是一种轻量级的方式，用于提供函数式接口或抽象类的实现（为简化文本，以下解释均指接口，但抽象类可以以相同的方式使用）。
 
-A *functional interface* is an interface which has only one method.
-Here is an example:
+*函数式接口*是只有一个方法的接口。
+这是一个例子：
 ```wurst
 // the functional interface:
 interface Predicate<T>
@@ -211,9 +202,7 @@ else
 destroy pred
 ```
 
-When using lambda expressions, it is not necessary to define a new class
-implementing the functional interface. Instead the only function of the
-functional interface can be implemented where it is used, like so:
+使用 lambda 表达式时，无需定义一个实现该函数式接口的新类。相反，该函数式接口的唯一函数可以在其使用的地方实现，如下所示：
 ```wurst
 let x = 3
 // Predicate is defined here:
@@ -224,27 +213,19 @@ else
 	print("x is odd")
 destroy pred
 ```
-The important part is:
+重要的部分是：
 ```wurst
 (int x) -> x mod 2 == 0
 ```
-This is a lambda expression. It consists of two parts and an arrow symbol *->*
-between the two parts. The left hand side of the arrow is a list of formal parameters,
-as you know them from function definitions. On the right hand side there
-is an expression, which is the implementation. The implementation consists only
-of a single expressions, because lambda expressions are typically small and used
-in one line. But if one expression is not enough there is the begin-end expression.
+这是一个 lambda 表达式。它由两部分和一个箭头符号 *->* 组成。箭头的左侧是形式参数列表，就像你从函数定义中了解的那样。右侧是一个表达式，即实现部分。实现通常只包含单个表达式，因为 lambda 表达式通常很小并且在一行中使用。但如果一个表达式不够，可以使用 begin-end 表达式。
 
-Remember that, because closures are just like normal objects, you also have to destroy them
-like normal objects. And you can do all the other stuff you can do with
-other objects like putting them in a list or into a table.
+请记住，因为闭包就像普通对象一样，你也必须像销毁普通对象一样销毁它们。你还可以对它们执行所有可以对其他对象执行的操作，比如将它们放入列表或表中。
 
-### Type inference
+### 类型推断
 
-It is not necessary to provide the parameter types for Lambda-parameters, if they can be inferred from the context.
-Moreover, parenthesis are optional, when there is only one parameter without type or no parameter.
+如果可以从上下文中推断出 Lambda 参数的类型，则无需提供它们。此外，当只有一个无类型参数或没有参数时，括号是可选的。
 
-Therefore the following definitions are equivalent:
+因此，以下定义是等效的：
 
 ```wurst
 Predicate<int> pred = (int x) -> x mod 2 == 0
@@ -252,12 +233,9 @@ Predicate<int> pred = (x) -> x mod 2 == 0
 Predicate<int> pred = x -> x mod 2 == 0
 ```
 
-### begin-end expression
+### begin-end 表达式
 
-Sometimes one expression is not enough for a closure. In this case, the begin-end
-expression can be used. It allows to have statements inside an expression. The
-begin keyword has to be followed by a newline and an increase in indentation.
-It is possible to have multiple lines of statements within:
+有时一个表达式对于闭包来说是不够的。在这种情况下，可以使用 begin-end 表达式。它允许在表达式内部包含语句。begin 关键字后必须跟一个换行符和增加的缩进。可以在其中包含多行语句：
 ```wurst
 doAfter(10.0, () -> begin
 	u.kill()
@@ -265,18 +243,15 @@ doAfter(10.0, () -> begin
 	doMoreStuff()
 end)
 ```
-It is also possible to have a return statement inside a begin-end expression
-but only the very last statement can be a return.
+在 begin-end 表达式内部也可以有 return 语句，但只有最后一条语句可以是 return。
 
-### Lambda blocks
+### Lambda 块
 
-Often a lambda expression with begin-end-block is given as the last argument in a line.
-Wurst offers a special Syntax for this case, which fits better with the general indentation based Syntax used in Wurst.
+通常，带有 begin-end 块的 lambda 表达式作为一行中的最后一个参数。Wurst 为这种情况提供了一种特殊的语法，它更符合 Wurst 中使用的基于缩进的通用语法。
 
-A lambda expression can be used after an assignment, local variable definition, return statement or function call.
-The arrow `->` of the lambda expression must then be followed by a newline and an indented block of statements.
+lambda 表达式可以在赋值、局部变量定义、返回语句或函数调用之后使用。lambda 表达式的箭头 `->` 后面必须跟一个换行符和一个缩进的语句块。
 
-For example, the begin-end-block above can be replaced as follows:
+例如，上面的 begin-end 块可以替换如下：
 
 ```wurst
 doAfter(10.0) ->
@@ -285,7 +260,7 @@ doAfter(10.0) ->
 	doMoreStuff()
 ```
 
-The following examples uses a lambda with parameter `u` to iterate over all units owned by a player:
+以下示例使用带参数 `u` 的 lambda 遍历玩家拥有的所有单位：
 
 ```wurst
 forUnitsOfPlayer(lastRinger) u ->
@@ -297,27 +272,23 @@ forUnitsOfPlayer(lastRinger) u ->
 		createUnit(players[8], DUMMY_ID, pos, facing)
 ```
 
-### Capturing of Variables
+### 变量捕获
 
 
-The really cool feature with lambda expressions is, that they create a *closure*.
-This means that they can close over local variables outside their scope
-and capture them.
-Here is a very simple example:
+lambda 表达式真正酷的特性是它们会创建一个*闭包*。
+这意味着它们可以封闭其作用域之外的局部变量并捕获它们。
+这是一个非常简单的例子：
 ```wurst
 let min = 10
 let max = 50
 // remove all elements not between min and max:
 myList.removeWhen((int x) ->  x < min or x > max)
 ```
-In this example the lambda expression captured the local variables min and max.
+在这个例子中，lambda 表达式捕获了局部变量 min 和 max。
 
-It is important to know, that variables are captured by value. When a closure
-is created the value is copied into the closure and the closure only works on that copy.
-The variable can still be changed in the environment or in the closure, but this will have no effect
-on the respective other copy of the variable.
+重要的是要知道，变量是按值捕获的。当创建闭包时，值被复制到闭包中，闭包只在该副本上工作。变量仍然可以在环境或闭包中更改，但这不会对变量的另一个副本产生任何影响。
 
-This can be observed when a variable is changed after the closure is created:
+当变量在闭包创建后被更改时，可以观察到这一点：
 ```wurst
 var s = "Hello!"
 let f = () ->
@@ -330,16 +301,14 @@ f.run()  // will print "Hello!!"
 print(s) // will print "Bye!"
 ```
 
-### Behind the scenes
+### 幕后原理
 
-The compiler will just create a new class for every lambda expression in your code.
-This class implements the interface which is given by the context in which
-the lambda expression is used.
-The generated class has fields for all local variables which are captured.
-Whenever the lambda expression is evaluated, a new object of the class is created
-and the fields are set.
+编译器会为代码中的每个 lambda 表达式创建一个新类。
+这个类实现了由 lambda 表达式使用上下文给出的接口。
+生成的类为所有捕获的局部变量设有字段。
+每当 lambda 表达式被求值时，就会创建该类的一个新对象并设置其字段。
 
-So the "Hello!" example above is roughly equivalent to the following code:
+所以上面的“Hello!”示例大致等同于以下代码：
 ```wurst
 // (the interface was not shown in the above code, but it is the same):
 interface CallbackFunc
@@ -364,10 +333,9 @@ f.run()  // will print "Hello!"
 f.run()  // will print "Hello!!"
 print(s) // will print "Bye!"
 ```
-### Function types
+### 函数类型
 
-A lambda expression has a special type which captures the type of the parameter
-and the return type. This type is called a *function type*. Here are some examples with their type:
+lambda 表达式有一种特殊的类型，它捕获参数的类型和返回类型。这种类型称为*函数类型*。以下是一些示例及其类型：
 ```wurst
 () -> 1
 	// type: () -> integer
@@ -379,25 +347,22 @@ and the return type. This type is called a *function type*. Here are some exampl
 	// type: (int, string) -> string
 ```
 
-While function types are part of the type system, Wurst has no way to write down
-a function type. There are no variables of type "(int,string) -> string".
-Because of this, a lambda expression can only be used in places where
-a concrete interface or class type is known.
-This can be an assignment where the type of the variable is given.
+虽然函数类型是类型系统的一部分，但 Wurst 没有办法写下函数类型。
+没有类型为 `(int,string) -> string` 的变量。
+因此，lambda 表达式只能在已知具体接口或类类型的地方使用。
+这可以是一个赋值语句，其中变量的类型是给定的。
 ```wurst
 Predicate<int> pred = (int x) -> x mod 2 == 0
 ```
-However it is not possible to use lambda expressions if the type of the variable is only inferred:
+但是，如果变量的类型只是被推断出来，则无法使用 lambda 表达式：
 ```wurst
 // will not compile, error "Could not get super class for closure"
 let pred = (int x) -> x mod 2 == 0
 ```
-### Lambda expressions as code-type
+### 作为 code 类型的 Lambda 表达式
 
-Lambda expressions can also be used where an expression of type `code` is expected.
-The prerequisite for this is, that the lambda expression does not have any parameters
-and does not capture any variables. For example the following code is _not_ valid,
-because the local variable `x` is captured.
+Lambda 表达式也可以在需要 `code` 类型表达式的地方使用。
+这样做的前提是，lambda 表达式没有任何参数，也不捕获任何变量。例如，以下代码是*无效*的，因为它捕获了局部变量 `x`。
 
 ```wurst
 let t = getTimer()
@@ -405,30 +370,24 @@ let x = 3
 t.start(3.0, () -> doSomething(x)) // error: Cannot capture local variable 'x'
 ```
 
-This can be fixed by attaching the data to the timer manually:
+这可以通过手动将数据附加到计时器来解决：
 ```wurst
 let t = getTimer()
 let x = 3
 t.setData(x)
 t.start(3.0, () -> doSomething(GetExpiredTimer().getData()))
 ```
-If a lambda expression is used as `code`, there is no new object created and
-thus there is no object which has to be destroyed. The lambda expression will just
-be translated to a normal Jass function, so there is no performance overhead when
-using lambda expressions in this way.
+如果 lambda 表达式用作 `code`，则不会创建新对象，因此也没有需要销毁的对象。lambda 表达式将被直接翻译成一个普通的 Jass 函数，因此以这种方式使用 lambda 表达式没有性能开销。
 
 ## 函数重载
 
-Function overloading allows you to have several functions with the same name.
-The compiler will then decide which function to call based on the static type
-of the arguments.
+函数重载允许你拥有多个同名函数。
+编译器将根据参数的静态类型来决定调用哪个函数。
 
-Wurst uses a very simple form of overloading. If there is exactly one function in
-scope which is feasible for the given arguments, then this function will be used.
-If there is more than one feasible function the compiler will give an error.
+Wurst 使用一种非常简单的重载形式。如果在作用域中只有一个函数对于给定的参数是可行的，那么将使用该函数。
+如果存在多个可行的函数，编译器将报错。
 
-Note that this is different to many other languages like Java, where the
-function with the most specific feasible type is chosen instead of giving an error.
+请注意，这与许多其他语言（如 Java）不同，在这些语言中，会选择具有最具体可行类型的函数，而不是报错。
 ```wurst
 function unit.setPosition(vec2 pos)
 	...
@@ -442,14 +401,14 @@ function real.add(real r)
 function real.add(real r1, real r2)
 	...
 ```
-This works because the parameters are of different types or have a different amount of paramaters and the correct function can therefore be determined at compiletime.
+这是可行的，因为参数类型不同或参数数量不同，因此可以在编译时确定正确的函数。
 ```wurst
 function real.add(real r1)
 	...
 
 function real.add(real r1) returns real
 ```
-This does not work because only the returntype is different and the correct function cannot be determined.
+这是不可行的，因为只有返回类型不同，无法确定正确的函数。
 
 ```wurst
 class A
@@ -465,15 +424,13 @@ function foo(B c)
 	foo(new B)
 ```
 
-This does not work either, because B is a subtype of A. If you would call the function foo
-with a value of type B, both functions would be viable. Other languages just take the
-"most specific type" but Wurst does not allow this. If A and B are incomparable types, the overloading is allowed.
+这也不可行，因为 B 是 A 的子类型。如果你用 B 类型的值调用函数 foo，两个函数都将是可行的。其他语言会选择“最具体的类型”，但 Wurst 不允许这样做。如果 A 和 B 是不可比较的类型，则允许重载。
 
 
 ## 操作符重载
 
-Operator Overloading allows you to change the behavior of internal operators +, -, \* and / for custom arguments.
-A quick example from the standard library (Vectors.wurst):
+操作符重载允许你为自定义参数更改内部操作符 +、-、* 和 / 的行为。
+一个来自标准库的快速示例 (Vectors.wurst)：
 ```wurst
 // Defining the "+" operator for the tupletype vec3
 public function vec3.op_plus( vec3 v ) returns vec3
@@ -487,8 +444,8 @@ vec3 c = a.add(b)
 // With operator Overloading
 vec3 c = a + b
 ```
-You can overload operators for existing types via Extension-Functions or via class-functions for the specific classtype.
-In order to define an overloading function it has to be named as following:
+你可以通过扩展函数为现有类型重载操作符，或通过类函数为特定类类型重载。
+为了定义一个重载函数，它必须按以下方式命名：
 ```wurst
 +  "op_plus"
 -  "op_minus"
@@ -498,10 +455,10 @@ In order to define an overloading function it has to be named as following:
 
 ## 注解
 
-Almost any definition in wurst can be annotated with one or more optionally named annotations.
-Annotations are compiletime only metadata which can be used for compiletime function, tests and `callFunctionsWithAnnotation`.
-In most cases annotations are generally disregarded unless you use them yourself.
-As of build#1124 annotations must be defined as a top level, bodiless function using `@annotation`, in order to be valid.
+Wurst 中的几乎任何定义都可以用一个或多个可选的命名注解进行标注。
+注解是仅在编译时存在的元数据，可用于编译时函数、测试和 `callFunctionsWithAnnotation`。
+在大多数情况下，除非你自己使用，否则注解通常会被忽略。
+从 build#1124 开始，注解必须使用 `@annotation` 定义为顶级的无函数体函数才有效。
 
 ```wurst
 @annotation public function my_annotation() // Definition
@@ -509,7 +466,7 @@ As of build#1124 annotations must be defined as a top level, bodiless function u
 @my_annotation function someOtherFunc() // Usage
 ```
 
-The wurst reserved annotations are defined in the `Annotations` package.
+Wurst 的保留注解在 `Annotations` 包中定义。
 
 ```wurst
 @annotation public function compiletime()
@@ -524,30 +481,27 @@ The wurst reserved annotations are defined in the `Annotations` package.
 
 ## 编译时执行
 
-Wurst includes an interpreter and can execute code at compiletime, which can be useful for testing and for object editing.
+Wurst 包含一个解释器，可以在编译时执行代码，这对于测试和对象编辑非常有用。
 
-### Compiletime Functions
+### 编译时函数
 
-Compiletime Functions are functions, that are executed when compiling your script/map.
-They mainly offer the possibility to create Object-Editor Objects via code.
+编译时函数是在编译你的脚本/地图时执行的函数。
+它们主要提供了通过代码创建对象编辑器对象的能力。
 
-A compiletime function is just a normal Wurst function annotated with @compiletime.
+编译时函数只是一个用 @compiletime 注解的普通 Wurst 函数。
 ```wurst
 @compiletime function foo()
 ```
-Compiletime functions have no parameters and no return value.
+编译时函数没有参数，也没有返回值。
 
-Compiletime functions are run by default. You can change this with the cmdline arguments `-runcompiletimefunctions` and `-injectobjects`.
-When you use compiletime functions to generate objects, Wurst will generate the object files
-next to your map and you can import them into your map using the object editors normal import
-function. Compared to ObjectMerger this has the advantage, that you can directly see your new
-objects in the object editor.
-You can also enable an option to directly inject the objects into the map file, though the changes will not be visible in the object-editor directly.
+编译时函数默认运行。你可以使用命令行参数 `-runcompiletimefunctions` 和 `-injectobjects` 来更改此行为。
+当你使用编译时函数生成对象时，Wurst 会在你的地图旁边生成对象文件，你可以使用对象编辑器的常规导入功能将它们导入到你的地图中。与 ObjectMerger 相比，这样做的好处是你可以直接在对象编辑器中看到你的新对象。
+你还可以启用一个选项，将对象直接注入到地图文件中，不过这些更改不会直接在对象编辑器中显示。
 
-You can use the same code during runtime and compiletime.
-The special constant `compiletime` can be used to distinguish the two.
-The constant is `true` when the function was called at compiletime and `false` otherwise.
-The following example shows how this could be useful:
+你可以在运行时和编译时使用相同的代码。
+特殊常量 `compiletime` 可用于区分两者。
+当函数在编译时调用时，该常量为 `true`，否则为 `false`。
+以下示例展示了这可能如何有用：
 ```wurst
 init
 	doInit()
@@ -561,16 +515,16 @@ function doInit()
 			// place item on map
 ```
 
-### Compiletime Expressions
+### 编译时表达式
 
-Similar to compiletime functions, Wurst also has compiletime expressions.
-As the name suggests, these are expressions, which are evaluated at compiletime.
-The result of executing the expression is placed into the mapscript instead of the original expression.
+与编译时函数类似，Wurst 也有编译时表达式。
+顾名思义，这些是在编译时求值的表达式。
+执行表达式的结果会取代原始表达式，被放入地图脚本中。
 
-The syntax for compiletime expressions is a simple function call to the `compiletime` function defined in package `MagicFunctions` in the standard library.
-This function takes one argument, which is the expression to evaluate.
+编译时表达式的语法是对标准库中 `MagicFunctions` 包内定义的 `compiletime` 函数的简单调用。
+该函数接受一个参数，即要求值的表达式。
 
-For example the following defines a global variable `blub` and initializes it with the compiletime expression `fac(5)`:
+例如，以下代码定义了一个全局变量 `blub`，并用编译时表达式 `fac(5)` 对其进行初始化：
 
 ```wurst
 let blub = compiletime(fac(5))
@@ -581,45 +535,40 @@ function fac(int x) returns int
     return x * fac(x - 1)
 ```
 
-The factorial function is evaluated at compiletime and returns `120`.
-The number `120` then replaces the compiletime expression in the generated mapscript.
+阶乘函数在编译时被求值并返回 `120`。
+然后，数字 `120` 会在生成的地图脚本中替换掉编译时表达式。
 
-Just like compiletime functions, it is also possible to use compiletime expressions with object editing natives (see below).
+就像编译时函数一样，编译时表达式也可以与对象编辑原生函数一起使用（见下文）。
 
-Compiletime expressions have the restriction, that it is not possible to compile the map without the `-runcompiletimefunctions` flag.
+编译时表达式有一个限制，即如果不带 `-runcompiletimefunctions` 标志，就无法编译地图。
 
-### Execution order
+### 执行顺序
 
-Compiletime expressions and functions are executed from top to bottom inside a package.
-Imported packages are executed before the importing package if the import-relation is one directional.
-Otherwise the execution order is not specified and depends on implementation details.
+编译时表达式和函数在包内从上到下执行。
+如果导入关系是单向的，则导入的包会在导入它的包之前执行。
+否则，执行顺序未指定，并取决于实现细节。
 
-### Functions available at compiletime
+### 编译时可用的函数
 
-Not all functions which can be used in the game can be used at compiletime.
-Only a few functions are implemented in the Wurst compiler and emulate the respective functions from `common.j`.
+并非所有可以在游戏中使用的函数都可以在编译时使用。
+只有少数函数在 Wurst 编译器中实现，并模拟了 `common.j` 中的相应函数。
 
-The currently implemented functions can be found in the compiler code in the class [NativeFunctionsIO](https://github.com/wurstscript/WurstScript/blob/master/de.peeeq.wurstscript/src/main/java/de/peeeq/wurstio/jassinterpreter/NativeFunctionsIO.java).
+当前实现的函数可以在编译器代码的 [NativeFunctionsIO](https://github.com/wurstscript/WurstScript/blob/master/de.peeeq.wurstscript/src/main/java/de/peeeq/wurstio/jassinterpreter/NativeFunctionsIO.java) 类中找到。
 
 
-### Object Editing Natives
+### 对象编辑原生函数
 
-The standard library provides some functions to edit objects in compiletime functions.
-You can find the corresponding natives and higher level libraries in the objediting folder of the standard library.
+标准库提供了一些在编译时函数中编辑对象的函数。
+你可以在标准库的 objediting 文件夹中找到相应的原生函数和更高级别的库。
 
-The package ObjEditingNatives contains natives to create and manipulate objects. If you are familiar with
-the object format of Wc3 and know similar tools like [Lua Object Generation](https://www.hiveworkshop.com/forums/jass-ai-scripts-tutorials-280/lua-object-generation-191740/)
-or the ObjectMerger from JNGP, you should have no problems in using them. If you run Wurst with compiletime functions enabled, it will generate
-the object creation code for all the objects in your map. This code is saved in files named similar to "WurstExportedObjects_w3a.wurst.txt" and
-can be found right next to your map file. You can use this code as a starting point if you want to use the natives.
+ObjEditingNatives 包包含用于创建和操作对象的原生函数。如果你熟悉 Wc3 的对象格式，并了解类似 [Lua 对象生成](https://www.hiveworkshop.com/forums/jass-ai-scripts-tutorials-280/lua-object-generation-191740/) 或 JNGP 的 ObjectMerger 等工具，那么使用它们应该没有问题。如果你在启用编译时函数的情况下运行 Wurst，它将为地图中的所有对象生成对象创建代码。此代码保存在类似于 "WurstExportedObjects_w3a.wurst.txt" 的文件中，可以在你的地图文件旁边找到。如果你想使用原生函数，可以将此代码作为起点。
 
-Wurst also provides a higher level of abstraction. For example the package AbilityObjEditing provides many classes
-for the different base abilities of Wc3 with readable method names. That way you do not have to look up the IDs.
+Wurst 还提供了更高级别的抽象。例如，AbilityObjEditing 包为 Wc3 的不同基础技能提供了许多类，并带有可读的方法名。这样你就不必查找 ID。
 
-The following example creates a new spell based on "Thunder Bolt". The created spell has the ID "A005" for illustratory purpose.
-In proper code you should generate your IDs so you don't have to deal with them directly. See [this blog entry](https://wurstlang.org/blog/bestofthewurst3.html#objectediting%20)
-In the next line the name of the spell is changed to "Test Spell".
-Level specific properties are changed using level closures, which calculate values for all levels.
+以下示例基于“雷霆一击”创建一个新法术。为说明目的，创建的法术 ID 为“A005”。
+在正确的代码中，你应该生成你的 ID，这样就不必直接处理它们。请参阅[这篇博客文章](https://wurstlang.org/blog/bestofthewurst3.html#objectediting%20)
+在下一行中，法术的名称被更改为“测试法术”。
+特定等级的属性使用等级闭包进行更改，该闭包会计算所有等级的值。
 
 ```wurst
 package Objects
@@ -640,15 +589,15 @@ import AbilityObjEditing
 	// ... and so on
 ```
 
-> *NOTE* Packages exist for all object types.
+> *注意* 所有对象类型都存在相应的包。
 
 ## 自动化单元测试
 
-You can add the annotation `@Test` to any function. Open the task runner `F1` and type `run test` to see the available commands. You can either run the test under cursour, all in the package or all tests overall.
+你可以将 `@Test` 注解添加到任何函数。打开任务运行器 `F1` 并输入 `run test` 以查看可用命令。你可以运行光标下的测试、包中的所有测试或所有测试。
 
-To perform assertions you need to import the `Wurstunit` package.
+要执行断言，你需要导入 `Wurstunit` 包。
 
-Example:
+示例：
 
 ```wurst
 package Test
@@ -661,7 +610,7 @@ import Wurstunit
 	12 .assertEquals(5 + 8)
 ```
 
-If you run this, you get the following output:
+如果你运行此代码，将得到以下输出：
 
 ```
 Running <PlayerData:114 - a>..
@@ -676,4 +625,4 @@ Tests succeeded: 1/2
 >> 1 Tests have failed!
 ```
 
-You can search the standard library for "@Test" to get some more examples.
+你可以在标准库中搜索“@Test”以获取更多示例。

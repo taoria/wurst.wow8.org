@@ -7,4 +7,4 @@ sections:
   - /stdlib/_wurst/wurstunit
 ---
 
-**[SOURCE ON GITHUB](https://github.com/wurstscript/WurstStdlib2/blob/master/wurst/_wurst/Wurstunit.wurst)**
+**[GITHUB 上的源代码](https://github.com/wurstscript/WurstStdlib2/blob/master/wurst/_wurst/Wurstunit.wurst)**

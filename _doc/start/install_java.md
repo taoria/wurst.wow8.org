@@ -10,7 +10,9 @@ sections:
 
 ### 下载 JRE
 
-[*&nbsp;*{: .fa .fa-download} 下载 Java](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html){: .btn .btn-orange} ![](/assets/images/setup/java_powered.png) 
+[*&nbsp;*{: .fa .fa-download} 下载 Java](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html){: .btn .btn-orange} 
+![](/assets/images/setup/java_powered.png)
+ 
 
 下载适合你系统的Java，并跟随下方的安装步骤来安装。
 
@@ -32,7 +34,9 @@ WurstScript的许多功能依赖于电脑上配置的java环境变量。
 
 如果你的Java正确安装了，就应该能够看到如下的消息：
 
-![](/assets/images/setup/JavaVerify.png){: .img-responsive}
+
+![](/assets/images/setup/JavaVerify.png)
+{: .img-responsive}
 
 如果以上命令出现了错误，你可以尝试输入 `java` 或者 `javac` 命令来测试环境变量是否成功配置。
 

@@ -11,8 +11,8 @@ sections:
 ---
 
 <div class="jumbotron" markdown="1">
-# *&nbsp;*{: .fa .fa-twitter} Submit your own project!
-You can submit your own resource using our [Issue Tracker](https://github.com/wurstscript/wurstscript.github.io/issues)!
+# *&nbsp;*{: .fa .fa-twitter} 提交你自己的项目！
+你可以使用我们的[问题跟踪器](https://github.com/wurstscript/wurstscript.github.io/issues)来提交你自己的资源！
 </div>
 
-Here you will find a selection of the maps and resources available, powered by wurst.
+在这里，你会找到一系列由 Wurst 驱动的可用地图和资源。

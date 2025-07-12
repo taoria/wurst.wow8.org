@@ -1,17 +1,17 @@
 ---
-title: Angle
+title: 角度
 sections:
-- Intro
-- Basic Usage
+- 简介
+- 基本用法
 ---
 
 
-### Intro
+### 简介
 
-The `angle` tuple in wurst is used to describe angle values to prevent confusion between radians and degrees.
-Using `angle` instead of raw reals provides zero overhead safety and smooth api.
+wurst 中的 `angle` 元组用于描述角度值，以防止弧度和角度之间的混淆。
+使用 `angle` 而不是原始实数可以提供零开销的安全性和流畅的 API。
 
-### Basic Usage
+### 基本用法
 
 ```wurst
 // Create from degrees or radians
@@ -23,7 +23,7 @@ let cosVal = angl1.cos()
 let uVec = angl1.direction()
 ```
 
-The angle tuple is also used as parameter and return value of standard library functions:
+angle 元组也用作标准库函数的参数和返回值：
 
 ```wurst
 // Get unit facing as angle

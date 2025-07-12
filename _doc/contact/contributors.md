@@ -1,8 +1,8 @@
 ---
-title: Contributors
+title: 贡献者
 ---
 
-Wurst is great due to contributions from:
+Wurst 的卓越表现离不开以下贡献者：
 
 
 - Crigges
